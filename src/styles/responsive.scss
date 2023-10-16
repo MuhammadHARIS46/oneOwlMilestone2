@@ -1,0 +1,211 @@
+@media only screen and (max-width: 1200px) {
+    // .apexcharts-toolbar {
+    //     top: -20px !important;
+    //     gap: 0 !important;
+    //   }
+
+
+    //   .apexcharts-toolbar>div {
+    //     transform: scale(.7) !important;
+    //   }
+    .App {
+        margin-left: 0;
+    }
+
+    .sidebar {
+        width: 0;
+        display: none;
+        transition: all 0.3s;
+    }
+
+    .menuButton {
+        display: block;
+    }
+
+    .desktopSearch {
+        display: none;
+    }
+
+    .mainSection .mobileSearch {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        .searchBarHeader {
+            width: 96%;
+        }
+    }
+
+    .sidebarwidth {
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 350px;
+        z-index: 999;
+        transition: all 0.3s;
+        padding: 20px;
+        overflow-x: hidden;
+        box-shadow: 0px 0px 20px rgb(1 41 112 / 10%);
+        background-color: #fff;
+    }
+
+    .sideBarInner {
+        .aSideCloseButton {
+            display: block;
+        }
+    }
+
+    .sideBarInner {
+        padding-top: 40px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .mainListComp {
+
+        .mainHeadingWrapper {
+            .switch {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .mainSection .mainSectionWrapper .cardMargin {
+        margin: 0
+    }
+
+    .mainSection .mainSectionWrapper .statsRow .statsColumn .columnIcon {
+        font-size: 16px;
+    }
+
+    .mainSection .mainSectionWrapper .statsRow .statsColumn span {
+        font-size: 8px;
+    }
+
+    .mainSection .mainSectionWrapper .statsRow .statsColumn h6 {
+        font-size: 24px;
+    }
+
+    .mainSection .mainSectionWrapper .statsRow {
+        height: 77px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        max-width: 890px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .footer2 {
+        display: block;
+    }
+
+    .sideBarInner .LogoImage {
+        padding-bottom: 40px;
+    }
+
+    .sidebarwidth {
+        width: 100%;
+    }
+
+    .mainSection .mainSectionWrapper .heading p {
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 0;
+        font-size: 28px;
+    }
+
+    .table> :not(caption)>*>* {
+        padding-right: 25px !important;
+    }
+
+
+
+    header .headerInner {
+        border-bottom: 1px solid #e7e7e7;
+    }
+
+
+
+    .mainSection .card-body {
+        padding: 25px 18px;
+    }
+
+    .mainSection .mainSectionWrapper .cardForm .tableSearch input {
+        max-width: 80%;
+        width: 100%;
+        display: block;
+        padding: 8px 20px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    header .headerInner {
+        padding: 1px 18px;
+    }
+
+    .billingBtnGroup {
+        margin-bottom: 10px;
+    }
+
+    .mainSection .mainSectionWrapper .cardForm {
+        width: 95%;
+    }
+
+    .donutChartCard .apexcharts-canvas {
+        position: relative;
+        left: 50%;
+        user-select: none;
+        transform: translate(-50%, 0);
+    }
+
+
+    .ql-toolbar.ql-snow .ql-formats {
+        margin-right: 0;
+    }
+
+    .ql-snow .ql-picker.ql-header {
+        width: 77px !important;
+    }
+
+    // .EditorMain .editorButton button{
+    //   margin-top: 35px;
+    // }
+    .sidebar {
+        .sideBarInner {
+            .sidebar-nav {
+                .nav-item {
+                    .nav-link {
+                        padding: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    header {
+        .headerInner {
+            .navRight {
+                .aboutDoctor {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 476px) {
+    .EditorMain .editorButton button {
+        margin-top: 25px;
+    }
+}
+
+@media only screen and (max-width: 348px) {
+    .EditorMain .editorButton button {
+        margin-top: 60px;
+    }
+}

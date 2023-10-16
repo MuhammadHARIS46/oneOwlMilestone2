@@ -1,0 +1,2493 @@
+** {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f2f8 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.mainSectionWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profileDropDown button:hover {
+  background-color: #0B2360;
+  color: white;
+}
+.profileDropDown button:focus {
+  background-color: #0B2360;
+  color: white;
+}
+
+#bellHeaderButton {
+  background-color: #0B2360;
+  border: none;
+  padding: 8px 15px 12px 15px;
+  font-size: 20px;
+  margin: 0;
+}
+#bellHeaderButton:hover {
+  background-color: #df1b1b;
+}
+#bellHeaderButton:focus {
+  background-color: #df1b1b;
+}
+#bellHeaderButton:first-child:active {
+  background-color: #df1b1b;
+}
+
+#bellHeaderButton::after {
+  display: none;
+}
+
+.cardBodyRelative {
+  position: relative;
+}
+
+.cardBodyAbsolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #0B2360;
+  width: 100%;
+  height: 130px;
+  border-radius: 0 0 50px 50px;
+}
+
+.agentNamePrivacy {
+  display: flex;
+  justify-content: space-between;
+}
+.agentNamePrivacy label {
+  font-size: 22px;
+}
+.agentNamePrivacy span {
+  color: #0B2360;
+  text-align: right;
+  font-size: 40px;
+}
+
+.usersPrivacyOuter {
+  display: flex;
+  justify-content: space-between;
+}
+.usersPrivacyOuter .usersPrivacy {
+  display: flex;
+  gap: 10px;
+}
+.usersPrivacyOuter .usersPrivacy img {
+  height: 30px;
+  width: 30px;
+}
+.usersPrivacyOuter .usersPrivacy .svgPrivacy {
+  color: white;
+  background-color: #0B2360;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.usersPrivacyOuter .showMoreButton {
+  background-color: transparent;
+  color: #0B2360;
+  border: none;
+}
+
+.cardListingComplete {
+  overflow-y: auto;
+  display: flex;
+  max-height: 500px;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 258px;
+}
+
+.sidebar {
+  position: fixed;
+  padding-top: 15px;
+  top: 64px;
+  left: 0;
+  bottom: 0;
+  width: 240px;
+  transition: all 0.3s;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+.desktopSearch {
+  width: 100%;
+  max-width: 544px;
+  position: relative;
+}
+
+.searchBarHeader {
+  border: 1px solid grey;
+  width: 100%;
+  max-width: 544px;
+  position: relative;
+}
+.searchBarHeader .suggestions {
+  position: absolute;
+  list-style: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: white;
+  width: 100%;
+  max-height: 230px;
+  overflow-y: auto;
+  z-index: 50;
+  padding-left: 0;
+}
+.searchBarHeader .suggestions li {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  cursor: pointer;
+}
+.searchBarHeader .suggestions li:hover {
+  background-color: #0B2360;
+  color: white;
+}
+.searchBarHeader .searchIcon {
+  position: absolute;
+  top: 50%;
+  font-size: 20px;
+  left: 30px;
+  transform: translate(-50%, -50%);
+}
+.searchBarHeader .crossIcon {
+  position: absolute;
+  top: 50%;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  right: 20px;
+  transform: translate(-50%, -50%);
+}
+.searchBarHeader input {
+  width: 100%;
+  height: 40px;
+  padding-left: 50px;
+  border: none;
+}
+
+.whiteButton:active {
+  background-color: #0B2360 !important;
+  color: white;
+  scale: 0.98;
+  opacity: 0.9;
+}
+
+.menuButton {
+  display: none;
+}
+
+.sidebarwidth {
+  width: 0;
+  display: none;
+  transition: all 0.3s;
+}
+
+.sideBarInner {
+  overflow-x: hidden;
+  position: relative;
+}
+.sideBarInner .aSideCloseButton {
+  position: absolute;
+  right: 0;
+  display: none;
+  top: 0;
+}
+.sideBarInner .aSideCloseButton button {
+  background-color: rgba(255, 0, 0, 0);
+  font-size: 18px;
+  border: none;
+}
+.sideBarInner .LogoImage {
+  padding-bottom: 20px;
+}
+.sideBarInner .LogoImage img {
+  width: 170px;
+  background: #0B2360;
+  padding: 10px 20px;
+  border-radius: 13px;
+}
+.sideBarInner .sidebar-nav {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #aab7cf transparent;
+}
+.sideBarInner .sidebar-nav .nav-itemRelative {
+  position: relative;
+}
+.sideBarInner .sidebar-nav .nav-itemRelative .navItemAbsolute {
+  position: absolute;
+  right: 10px;
+  background-color: white;
+  border: 1px solid #0B2360;
+  height: 20px;
+  width: 20px;
+  font-size: 12px;
+  top: 50%;
+  color: #0B2360;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
+.sideBarInner .sidebar-nav .nav-item {
+  margin-bottom: 5px;
+}
+.sideBarInner .sidebar-nav .nav-item .nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3;
+  padding: 10px 15px 10px 30px;
+  border-radius: 4px;
+}
+.sideBarInner .sidebar-nav .nav-item .nav-link span {
+  color: #aa97b0;
+  font-size: 17px;
+}
+.sideBarInner .sidebar-nav .nav-item .nav-link .sideIcon {
+  font-size: 23px;
+  margin-right: 30px;
+  color: #aa97b0;
+}
+.sideBarInner .sidebar-nav .nav-item .nav-link .ms-auto {
+  font-size: 12px;
+  margin-right: 10px;
+  color: #aa97b0;
+}
+.sideBarInner .sidebar-nav .nav-item .nav-content {
+  list-style: none;
+  padding-left: 4rem;
+}
+.sideBarInner .sidebar-nav .nav-item .nav-content a {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(235, 87, 87, 0.8078431373);
+  padding: 10px 0 10px 10px;
+  transition: all 0.3s;
+}
+.sideBarInner .sidebar-nav .nav-item .nav-content a i {
+  font-size: 15px;
+  margin-right: 8px;
+  line-height: 0;
+  border-radius: 50%;
+}
+.sideBarInner .sidebar-nav .nav-item .li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.sideBarInner .sidebar-nav .nav-item .collapsed {
+  background-color: white;
+}
+.sideBarInner .sidebar-nav .nav-item .collapsed span {
+  color: #aa97b0;
+}
+.sideBarInner .sidebar-nav .nav-item .collapsed .sideIcon {
+  color: #aa97b0;
+}
+.sideBarInner .sidebar-nav .nav-item .active {
+  background-color: #0B2360;
+}
+.sideBarInner .sidebar-nav .nav-item .active .sideIcon {
+  color: white;
+}
+.sideBarInner .sidebar-nav .nav-item .active span {
+  color: white;
+}
+
+.AppFull {
+  margin-left: 0;
+  transition: all 0.3s;
+}
+
+.App {
+  margin-left: 245px;
+  transition: all 0.3s;
+}
+
+header .headerInner {
+  padding: 1px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  z-index: 13;
+}
+header .headerInner .logoImage img {
+  width: 80px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+header .headerInner .navRight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .headerInner .navRight .notificationDropDown .dropdown-toggle {
+  background-color: rgba(233, 43, 43, 0.0666666667);
+  border: none;
+  color: #0B2360;
+  font-size: 23px;
+  position: relative;
+}
+header .headerInner .navRight .notificationDropDown .dropdown-toggle .notificationShow {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+header .headerInner .navRight .notificationDropDown .dropdown-toggle::after {
+  display: none;
+}
+header .headerInner .navRight .profileDropDown .dropdown-toggle {
+  background-color: rgba(233, 43, 43, 0);
+  border: none;
+  color: #0B2360;
+  font-size: 23px;
+  position: relative;
+}
+header .headerInner .navRight .profileDropDown .dropdown-toggle img {
+  border-radius: 10px;
+  width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 50px;
+}
+header .headerInner .navRight .profileDropDown .dropdown-toggle::after {
+  display: none;
+}
+header .headerInner .navRight .profileDropDown .dropdown-menu li a i {
+  color: #0B2360;
+  margin-right: 10px;
+}
+header .headerInner .navRight .aboutDoctor {
+  text-align: right;
+}
+header .headerInner .navRight .aboutDoctor p {
+  margin: 0;
+}
+header .headerInner .navRight .aboutDoctor .doctorName {
+  color: #0B2360;
+  font-weight: 600;
+}
+header .headerInner .navRight .aboutDoctor .doctorSpeciality {
+  color: #aa97b0;
+}
+header .headerInner .menuButton {
+  background-color: rgba(170, 151, 176, 0);
+  outline: none;
+  color: #0B2360;
+  border: 3px solid #0B2360;
+  border-radius: 8px;
+}
+header .headerInner .menuButton svg {
+  font-size: 30px;
+}
+
+.modalLogout {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 99999;
+  min-width: 290px;
+}
+.modalLogout .headerNotify {
+  color: #0B2360;
+  font-weight: 600;
+}
+.modalLogout .modalLogoutMain {
+  position: relative;
+  padding: 40px 30px 30px 30px;
+}
+.modalLogout .modalLogoutMain .modalLogoutButton {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  border: 0;
+  background-color: transparent;
+}
+.modalLogout .modalLogoutMain .logoutButtons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.modalLogout .modalLogoutMain .logoutButtons button {
+  border: none;
+  background-color: transparent;
+}
+.modalLogout .modalLogoutMain .logoutButtons .yesButton {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: white;
+  padding: 6px 16px;
+  background-color: #0B2360;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: all 0.1 ease-in;
+}
+.modalLogout .modalLogoutMain .logoutButtons .yesButton:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+.modalLogout .modalLogoutMain .logoutButtons .noButton {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: #0B2360;
+  padding: 6px 16px;
+  border: 1px solid #0B2360;
+  border-radius: 5px;
+  transition: all 0.1 ease-in;
+  border: 1px solid #0B2360;
+}
+.modalLogout .modalLogoutMain .logoutButtons .noButton:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+
+.activityChange {
+  position: relative;
+}
+.activityChange .activityChangeInner {
+  position: absolute;
+  bottom: -20px;
+  z-index: 999;
+  background-color: white;
+  padding: 5px;
+}
+.activityChange .activityChangeInner .activityWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3px;
+}
+.activityChange .activityChangeInner .activityWrapper button {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 0;
+  flex: 1;
+  text-align: left;
+}
+.activityChange .activityChangeInner .activityWrapper .activity {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #11D600;
+}
+.activityChange .activityChangeInner .activityWrapper .activityPause {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: yellow;
+}
+.activityChange .activityChangeInner .activityWrapper .activityStop {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+}
+.activityChange .activityChangeInner .activityWrapper .activityNotActive {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: grey;
+}
+
+.mainSection {
+  padding-top: 95px;
+}
+.mainSection .faqItem .faqHeader {
+  justify-content: space-between;
+  display: flex;
+}
+.mainSection .faqItem .faqHeader .faqHeaderLeft {
+  display: flex;
+  gap: 10px;
+}
+.mainSection .faqItem .faqHeader .faqHeaderLeft img {
+  width: 44px;
+  height: 44px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mainSection .faqItem .faqHeader .faqHeaderLeft .headerInnerLeft .customerName {
+  font-size: 20px;
+  color: black;
+}
+.mainSection .faqItem .faqHeader .faqHeaderLeft .headerInnerLeft p {
+  margin-bottom: 0;
+  color: #5A5A5F;
+  font-size: 15px;
+  line-height: 20px;
+}
+.mainSection .faqItem .faqHeader .faqHeaderRight {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.mainSection .faqItem .faqHeader .faqHeaderRight .clear {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: #0B2360;
+  padding: 6px 16px;
+  border: 1px solid #0B2360;
+  border-radius: 5px;
+  transition: all 0.1 ease-in;
+}
+.mainSection .faqItem .faqHeader .faqHeaderRight .clear:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+.mainSection .faqItem .faqHeader .faqHeaderRight .view {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: white;
+  padding: 6px 16px;
+  background-color: #0B2360;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: all 0.1 ease-in;
+}
+.mainSection .faqItem .faqHeader .faqHeaderRight .view:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+.mainSection .faqItem .faqAnswer .replyButton {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: white;
+  padding: 6px 16px;
+  background-color: #0B2360;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: all 0.1 ease-in;
+  margin-bottom: 10px;
+}
+.mainSection .faqItem .faqAnswer .replyButton:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+.mainSection .faqItem .faqAnswer .question {
+  margin: 20px 0;
+}
+.mainSection .faqItem .faqAnswer .answerBox {
+  position: relative;
+  margin: 0 0 25px 0;
+  padding-left: 10px;
+  width: 100%;
+  height: 48px;
+  background-color: #F8F8F8;
+}
+.mainSection .faqItem .faqAnswer .answerBox input {
+  background-color: #F8F8F8;
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  outline: none;
+  border: none;
+}
+.mainSection .faqItem .faqAnswer .answerBox .sendChatButton {
+  background-color: #0B2360;
+  border: none;
+  color: white;
+  padding: 0px 15px 5px 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  transform: translate(-13%, -50%);
+  top: 50%;
+  position: absolute;
+  right: 0;
+}
+.mainSection .faqItem .accordion {
+  margin: 12px 0 33px 0;
+}
+.mainSection .faqItem .accordion .accordion-item .accordion-header .accordion-button {
+  box-shadow: none;
+  background-color: transparent;
+}
+.mainSection .formField label {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+}
+.mainSection .formField input,
+.mainSection .formField select {
+  border-radius: 5px;
+  border: 2px solid #858585;
+  height: 44px;
+  padding: 10px;
+  width: 100%;
+}
+.mainSection .formField button {
+  background-color: #0B2360;
+  border: none;
+  color: white;
+  transition: all 0.1 ease-in;
+  border-radius: 20px;
+  padding: 5px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 0;
+  padding: 5px 10px;
+}
+.mainSection .formField button:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+.mainSection .formFieldSelect {
+  margin-top: 25px;
+}
+.mainSection .formFieldRelative {
+  position: relative;
+}
+.mainSection .formFieldRelative .inputFieldAbsolute {
+  position: absolute;
+  bottom: -2.5px;
+  left: 27px;
+  transform: translate(-50%, -50%);
+}
+.mainSection .formFieldRelative .fieldAbsoluteInput {
+  padding-left: 45px;
+}
+.mainSection .addFieldMargin {
+  margin-bottom: 40px;
+}
+.mainSection .fieldValNo {
+  margin-bottom: 0 !important;
+}
+.mainSection .addFields .fieldHead {
+  color: #5A5A5F;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 0;
+}
+.mainSection .addFields .fieldVal {
+  color: #5A5A5F;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 10px;
+  line-height: 28px;
+}
+.mainSection .addFields .fieldAnchor {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+.mainSection .addFields .AddInput {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.mainSection .addFields .AddInput input {
+  border: 1px solid grey;
+  outline: none;
+}
+.mainSection .addFields .AddInput .invalid {
+  border: 1px solid red;
+}
+.mainSection .addFields .AddInput button {
+  border: 1px solid grey;
+  background-color: transparent;
+  display: inline-flex;
+  height: 26px;
+  width: 26px;
+  align-items: center;
+  justify-content: center;
+}
+.mainSection .addFields .addfieldButton {
+  font-size: 20px;
+  line-height: 17px;
+  cursor: pointer;
+  border: none;
+  color: #0B2360;
+}
+.mainSection .addFields .addfieldButton svg {
+  margin-bottom: 2px;
+  margin-right: 10px;
+}
+.mainSection .profileCustomer {
+  color: #0B2360;
+  font-size: 40px;
+}
+.mainSection .formHeading5 {
+  font-size: 30px;
+}
+.mainSection .profileImg {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.mainSection .profileImg input {
+  display: none;
+}
+.mainSection .profileImg:hover::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* You can adjust the background color and opacity as needed */
+  z-index: 1;
+  /* Place the overlay above the image */
+  display: block;
+}
+.mainSection .profileImg img {
+  width: 154px;
+  border-radius: 50%;
+  height: 154px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mainSection .profileImg .camera-icon {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  /* Place the camera icon above the overlay */
+  display: none;
+}
+.mainSection .profileImg:hover .camera-icon {
+  display: block;
+}
+.mainSection .channelHeading {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  margin: 0;
+}
+.mainSection .pagination {
+  gap: 20px;
+  justify-content: flex-end;
+}
+.mainSection .pagination li {
+  width: 30px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainSection .pagination .active {
+  background-color: #0B2360;
+  color: white;
+}
+.mainSection .pagination .previous a,
+.mainSection .pagination .next a {
+  color: #5A5A5F;
+}
+.mainSection .channels {
+  list-style: none;
+  height: 290px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mainSection .channels a {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+}
+.mainSection .channels .facebookChannel {
+  background-color: #3A589B;
+}
+.mainSection .channels .whatsappChannel {
+  background-color: #48C857;
+}
+.mainSection .channels .twitterChannel {
+  background-color: #1D9BF0;
+}
+.mainSection .channels li {
+  border-radius: 5px;
+  padding: 8px 20px;
+  color: white;
+}
+.mainSection .channels li svg {
+  font-size: 30px;
+  margin-right: 8px;
+}
+.mainSection .headingMainCon {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.mainSection .headingMainCon h3 {
+  color: #0B2360;
+  font-size: 44px;
+  margin: 0;
+  padding: 0;
+}
+.mainSection .headingMainCon button {
+  font-size: 18px;
+  display: inline-block;
+  height: 40px;
+  color: #0B2360;
+  padding: 6px 16px;
+  border: 1px solid #0B2360;
+  border-radius: 5px;
+}
+.mainSection .settingsListComp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.mainSection .mainListComp .mainHeadingWrapper {
+  /* Hide default HTML checkbox */
+  /* The slider */
+  /* Rounded sliders */
+}
+.mainSection .mainListComp .mainHeadingWrapper .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 29px;
+}
+.mainSection .mainListComp .mainHeadingWrapper .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.mainSection .mainListComp .mainHeadingWrapper .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid #ccc;
+  transition: 0.4s;
+}
+.mainSection .mainListComp .mainHeadingWrapper .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 13px;
+  bottom: -8.5px;
+  transform: translate(-50%, -50%);
+  background-color: #ccc;
+  transition: 0.4s;
+}
+.mainSection .mainListComp .mainHeadingWrapper input:checked + .slider {
+  background-color: #0B2360;
+  border: 3px solid transparent;
+}
+.mainSection .mainListComp .mainHeadingWrapper input:focus + .slider {
+  box-shadow: 0 0 1px #0B2360;
+}
+.mainSection .mainListComp .mainHeadingWrapper input:checked + .slider:before {
+  background-color: white;
+  transform: translate(18px, -10px);
+}
+.mainSection .mainListComp .mainHeadingWrapper .slider.round {
+  border-radius: 34px;
+}
+.mainSection .mainListComp .mainHeadingWrapper .slider.round:before {
+  border-radius: 50%;
+}
+.mainSection .mainListHeading {
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: #0B2360;
+}
+.mainSection .mainListHeading h6 {
+  margin: 0;
+  padding: 0;
+}
+.mainSection .mainListHeading svg {
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+.mainSection .listingButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.mainSection .listingButtons .clear {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: #0B2360;
+  padding: 6px 16px;
+  border: 1px solid #0B2360;
+  border-radius: 5px;
+  transition: all 0.1 ease-in;
+}
+.mainSection .listingButtons .clear:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+.mainSection .listingButtons .View {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: white;
+  padding: 6px 16px;
+  background-color: #0B2360;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: all 0.1 ease-in;
+}
+.mainSection .listingButtons .View:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+.mainSection .mobileSearch {
+  display: none;
+}
+.mainSection .rightSidePrivacyCol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mainSection .rightSidePrivacyCol .rightSidePrivacyCoLbutton {
+  background-color: #0B2360;
+  border: none;
+  color: white;
+  transition: all 0.1 ease-in;
+  border-radius: 20px;
+  padding: 5px 20px;
+  border-radius: 0;
+  text-align: center;
+  cursor: pointer;
+}
+.mainSection .rightSidePrivacyCol .rightSidePrivacyCoLbutton:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+.mainSection .billingTotal {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mainSection .billingTotal .bottomBilling button {
+  background-color: #0B2360;
+  border: none;
+  color: white;
+  transition: all 0.1 ease-in;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+.mainSection .billingTotal .bottomBilling button:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+.mainSection .billingTotal .topBilling {
+  gap: 20px;
+  display: flex;
+}
+.mainSection .billingTotal .topBilling h5 {
+  font-size: 60px;
+  font-weight: bold;
+}
+.mainSection .billingTotal .topBilling .totalPara {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 70px;
+}
+.mainSection .billingTotal .topBilling .totalPara p {
+  margin: 0;
+  margin-top: 10px;
+  line-height: 10px;
+}
+.mainSection .billingTotal .topBilling .totalPara small {
+  font-size: 11px;
+}
+.mainSection .activityChange {
+  position: relative;
+}
+.mainSection .activityChange .activityChangeInner {
+  position: absolute;
+  bottom: 0;
+}
+.mainSection .mainSectionInner {
+  width: 100%;
+}
+.mainSection .mainSectionInner .billingMain h6 {
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 14px;
+}
+.mainSection .mainSectionInner .billingMain .billinBtnGroupOtr {
+  display: flex;
+}
+.mainSection .mainSectionInner .billingMain .billingMainInner {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+.mainSection .mainSectionInner .billingMain .billingMainSearch {
+  font-size: 12px;
+  border-radius: 50px;
+  border: none;
+  max-width: 390px;
+  padding: 8px 10px;
+  background-color: #EFEFEF;
+}
+.mainSection .mainSectionInner .billingMain .billinBtnGroup {
+  display: flex;
+  border-radius: 50px;
+  background-color: #EFEFEF;
+  margin-top: 20px;
+}
+.mainSection .mainSectionInner .billingMain .billBtnGr input[type=radio] {
+  display: none;
+  /* Hide the radio buttons */
+}
+.mainSection .mainSectionInner .billingMain .billBtnGr label {
+  padding: 7px 30px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.mainSection .mainSectionInner .billingMain .billBtnGr input[type=radio]:checked + label {
+  background-color: #0B2360;
+  color: white;
+  border-radius: 50px;
+}
+.mainSection .mainSectionInner .billingMain .checkBoxesBilling {
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 20px;
+  row-gap: 10px;
+  column-gap: 20px;
+  font-size: 12px;
+  flex-wrap: wrap;
+  max-width: 390px;
+}
+.mainSection .mainSectionInner .billingMain .checkBoxesBilling .checkboxBill {
+  accent-color: #0B2360;
+  display: flex;
+  gap: 2px;
+}
+.mainSection .mainSectionInner .BillingTable tbody tr td {
+  padding-left: 20px;
+  text-align: left !important;
+}
+.mainSection .mainSectionInner .BillingTable tbody tr td strong {
+  color: black;
+  font-size: 15px;
+}
+.mainSection .mainSectionInner .BillingTable tbody tr .billingBodyRow {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.mainSection .mainSectionInner .BillingTable tbody tr .billingBodyRow p {
+  margin: 0;
+}
+.mainSection .mainSectionInner .BillingTable tbody tr td .billingIconTable {
+  background-color: #0B2360;
+  padding: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+.mainSection .mainSectionInner .BillingTable tbody tr td .billingIconTable svg {
+  height: 30px;
+  min-width: 30px;
+  color: white;
+  border-radius: 50%;
+}
+.mainSection .mainSectionInner .billingTableHeading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.mainSection .mainSectionInner .billingTableHeading .billingBtnGroup {
+  display: flex;
+}
+.mainSection .mainSectionInner .billingTableHeading .billingBtnGroup .billBtnGr input[type=radio] {
+  display: none;
+  /* Hide the radio buttons */
+}
+.mainSection .mainSectionInner .billingTableHeading .billingBtnGroup .billBtnGr label {
+  padding: 7px 30px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.mainSection .mainSectionInner .billingTableHeading .billingBtnGroup .billBtnGr input[type=radio]:checked + label {
+  background-color: #0B2360;
+  color: white;
+  border-radius: 50px;
+}
+.mainSection .mainSectionInner .agentPreference {
+  height: 540px !important;
+}
+.mainSection .mainSectionInner .billingChart {
+  display: flex;
+  gap: 18px;
+  height: 72px;
+}
+.mainSection .mainSectionInner .billingChart img {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mainSection .mainSectionInner .billingChart .billingChartInner {
+  line-height: 20px;
+}
+.mainSection .mainSectionInner .billingChart .billingChartInner p {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 35px;
+  font-weight: 700;
+}
+.mainSection .mainSectionInner .billingChart .billingChartInner span {
+  font-size: 16px;
+  color: #464255;
+  display: block;
+}
+.mainSection .mainSectionInner .billingChart .billingChartInner small {
+  font-size: 12px;
+  color: #A3A3A3;
+}
+.mainSection .mainSectionInner .preferenceTable table tbody tr td {
+  text-align: center;
+}
+.mainSection .mainSectionInner .preferenceTable table thead tr th:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.mainSection .mainSectionInner .preferenceTable table thead tr th:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.mainSection .mainSectionInner .preferenceTable table thead tr th {
+  height: 50px;
+  padding-left: 20px;
+  vertical-align: middle;
+  background-color: #0B2360;
+  color: white;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+}
+.mainSection .mainSectionInner .preferenceHeading {
+  display: flex;
+  justify-content: space-between;
+}
+.mainSection .mainSectionInner .preferenceHeading .mainHeadingPreferenceTable {
+  color: #5A5A5F;
+  font-size: 15px;
+}
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight .filterButton {
+  border: none;
+  box-shadow: none;
+  background-color: none;
+  position: relative;
+}
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight .filterButton .filterMenu {
+  background-color: white;
+  bottom: -70px;
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 77px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight .filterButton .filterMenu button {
+  border: none;
+  box-shadow: none;
+}
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight .filterButton .filterMenu button:hover {
+  background-color: #0B2360;
+  color: white;
+}
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight button {
+  border-radius: 5px;
+  display: flex;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  gap: 5px;
+  font-size: 12px;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid rgb(82, 82, 82);
+  padding: 0 10px;
+  height: 20px;
+}
+.mainSection .mainSectionInner .agentNamePara {
+  font-size: 14px;
+  color: rgb(82, 82, 82);
+  margin-bottom: 10px;
+}
+.mainSection .mainSectionInner .privacySummary h6 {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer {
+  padding-right: 50px;
+  margin-bottom: 30px;
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .yellowOpacity {
+  background-color: rgba(255, 179, 0, 0.231372549);
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .lightOpacity {
+  background-color: rgba(66, 57, 242, 0.2196078431);
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .blueOpacity {
+  background-color: rgba(2, 160, 252, 0.2274509804);
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .redOpacity {
+  background-color: rgba(255, 59, 41, 0.2039215686);
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .labelContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .yellow {
+  color: #FFB200;
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .blue {
+  color: #02A0FC;
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .light {
+  color: #4339F2;
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .red {
+  color: #FF3A29;
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .progress {
+  height: 8px;
+  margin-top: 5px;
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .progress .yellowLoader {
+  background-color: #FFB200;
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .progress .blueLoader {
+  background-color: #02A0FC;
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .progress .lightLoader {
+  background-color: #4339F2;
+}
+.mainSection .mainSectionInner .privacySummary .summaryContainer .progress .redLoader {
+  background-color: #FF3A29;
+}
+.mainSection .mainSectionInner .allNotificationCard {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 252px;
+  overflow-y: auto;
+}
+.mainSection .mainSectionInner .allNotificationCard .notify {
+  display: flex;
+  gap: 8px;
+}
+.mainSection .mainSectionInner .allNotificationCard .notify img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mainSection .mainSectionInner .allNotificationCard .notify svg {
+  background-color: #0B2360;
+  color: white;
+  height: 30px;
+  padding: 5px;
+  min-width: 30px;
+  border-radius: 10px;
+}
+.mainSection .mainSectionInner .allNotificationCard .notify .notifyInfo {
+  line-height: 12px;
+}
+.mainSection .mainSectionInner .allNotificationCard .notify .notifyInfo p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 17px;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 153px;
+}
+.mainSection .mainSectionInner .allNotificationCard .notify .notifyInfo small {
+  color: var(--black-40, rgba(28, 28, 28, 0.4));
+  font-size: 12px;
+}
+.mainSection .mainSectionInner .agentList {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  height: 250px;
+  overflow-y: auto;
+}
+.mainSection .mainSectionInner .agentList li button {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 5px 0 5px 5px;
+  width: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+.mainSection .mainSectionInner .agentList li button:hover {
+  background-color: rgb(238, 238, 238);
+}
+.mainSection .mainSectionInner .agentList li img {
+  width: 32px;
+  height: 32px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mainSection .mainSectionInner .agentList li p {
+  margin: 0;
+  padding: 0;
+  color: #0B2360;
+  font-size: 12px;
+}
+.mainSection .mainSectionInner .headingNotification {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mainSection .mainSectionInner .headingNotification .dropdown {
+  position: relative;
+}
+.mainSection .mainSectionInner .headingNotification .dropdown .btnDropDown {
+  background-color: transparent;
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  justify-content: center;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+.mainSection .mainSectionInner .headingNotification .dropdown .btnDropDown:active {
+  background-color: rgba(170, 151, 176, 0.2588235294);
+}
+.mainSection .mainSectionInner .headingNotification .dropdown .dropdownMenu {
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+.mainSection .mainSectionInner .headingNotification .dropdown .dropdownMenu li {
+  padding: 5px 20px 5px 20px;
+}
+.mainSection .mainSectionInner .headingNotification .dropdown .dropdownMenu li:hover {
+  background-color: #0B2360;
+  color: white;
+}
+.mainSection .mainSectionInner .searchBar2 {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 22px;
+}
+.mainSection .mainSectionInner .searchBar2 svg {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  font-size: 24px;
+  transform: translate(-50%, -50%);
+}
+.mainSection .mainSectionInner .searchBar2 input {
+  padding-left: 35px;
+  height: 100%;
+  width: 100%;
+}
+.mainSection .mainSectionInner .preferenceMaintable {
+  height: 630px;
+  overflow-y: auto;
+}
+.mainSection .mainSectionInner .marginBottomRow {
+  margin-bottom: 25px;
+}
+.mainSection .mainSectionInner .privacyTable .privacyAgentCol {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.mainSection .mainSectionInner .privacyTable .privacyAgentCol img {
+  width: 32px;
+  height: 32px;
+}
+.mainSection .mainSectionInner .privacyTable .privacyAgentCol p {
+  margin-bottom: 0;
+  color: #5A5A5F;
+  font-size: 18px;
+}
+.mainSection .mainSectionInner .privacyTable .actionButtons {
+  display: flex;
+}
+.mainSection .mainSectionInner .privacyTable .actionButtons .green {
+  background-color: green;
+  color: white;
+  border: transparent;
+  padding: 7px 15px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.mainSection .mainSectionInner .privacyTable .actionButtons .editUser {
+  background-color: transparent;
+  color: rgb(175, 175, 175);
+  border: transparent;
+  padding: 7px 15px;
+  border-radius: 5px;
+  border: 1px solid rgb(175, 175, 175);
+  margin-right: 10px;
+}
+.mainSection .mainSectionInner .privacyTable .actionButtons .delete {
+  margin-right: 10px;
+  background-color: #AD0000;
+  color: white;
+  border: transparent;
+  padding: 7px 15px;
+  border-radius: 5px;
+}
+.mainSection .mainSectionInner .privacyTable .privacyStatusCol {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 10px;
+}
+.mainSection .mainSectionInner .privacyTable .privacyStatusCol .activity {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #11D600;
+}
+.mainSection .mainSectionInner .privacyTable .privacyStatusCol p {
+  margin-bottom: 0;
+  color: #5A5A5F;
+  font-size: 18px;
+}
+.mainSection .mainSectionInner .privacyTable .privacyStatusCol button {
+  color: #0B2360;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 0;
+  color: #5A5A5F;
+  font-size: 18px;
+}
+.mainSection .mainSectionInner .privacyTable .iconsChannel button {
+  background-color: transparent;
+  border: none;
+}
+.mainSection .mainSectionInner .privacyTable .iconsChannel svg {
+  margin-right: 5px;
+  font-size: 20px;
+  color: #5A5A5F;
+}
+.mainSection .mainSectionInner .privacyTable .editColumn {
+  color: #0B2360;
+  background-color: transparent;
+  border: none;
+}
+.mainSection .mainSectionInner .privacyTable .editColumn svg {
+  font-size: 20px;
+}
+.mainSection .mainSectionInner .privacyTable .privacyPagination .pagination {
+  gap: 5px;
+}
+.mainSection .mainSectionInner .privacyTable .privacyPagination .pagination li:first-child {
+  width: auto;
+}
+.mainSection .mainSectionInner .privacyTable .privacyPagination .pagination li:last-child {
+  width: auto;
+}
+.mainSection .mainSectionInner .communicationTable h6 {
+  color: #5A5A5F;
+  font-size: 18px;
+}
+.mainSection .mainSectionInner .communicationTable table tbody tr td {
+  color: #797979;
+  font-size: 11px;
+  text-align: center;
+}
+.mainSection .mainSectionInner .communicationTable table thead tr th:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.mainSection .mainSectionInner .communicationTable table thead tr th:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.mainSection .mainSectionInner .communicationTable table thead tr th {
+  height: 50px;
+  padding-left: 20px;
+  vertical-align: middle;
+  background-color: #0B2360;
+  color: white;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+}
+.mainSection .mainSectionInner .CommunicationComponent {
+  height: 312px;
+  position: relative;
+}
+.mainSection .mainSectionInner .CommunicationComponent .communicationChat {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 48px;
+  background-color: #F8F8F8;
+}
+.mainSection .mainSectionInner .CommunicationComponent .communicationChat input {
+  padding-left: 15px;
+  background-color: #F8F8F8;
+  width: 100%;
+  outline: none;
+  padding-right: 70px;
+  height: 100%;
+  border: none;
+}
+.mainSection .mainSectionInner .CommunicationComponent .communicationChat .sendChatButton {
+  background-color: #0B2360;
+  border: none;
+  color: white;
+  padding: 0px 15px 5px 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  transform: translate(-13%, -50%);
+  top: 50%;
+  position: absolute;
+  right: 0;
+}
+.mainSection .mainSectionInner .CommunicationComponent .communicationMsgBody {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 200px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+.mainSection .mainSectionInner .CommunicationComponent .communicationHeader {
+  height: 50px;
+  background-color: #0B2360;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 0 11px;
+}
+.mainSection .mainSectionInner .CommunicationComponent .communicationHeader .communicationAbout img {
+  height: 32px;
+  width: 32px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 6px;
+}
+.mainSection .mainSectionInner .CommunicationComponent .communicationHeader .communicationAbout span {
+  font-size: 12px;
+}
+.mainSection .mainSectionInner .CommunicationComponent .communicationHeader .communicationControls button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.mainSection .mainSectionInner .CommunicationComponent .communicationHeader .communicationControls svg {
+  font-size: 19px;
+  margin-right: 24px;
+  color: white;
+}
+.mainSection .mainSectionInner .statsRowLast {
+  height: 113px !important;
+}
+.mainSection .mainSectionInner .statsRow {
+  display: flex;
+  justify-content: space-between;
+  height: 89px;
+}
+.mainSection .mainSectionInner .statsRow .statCol {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.mainSection .mainSectionInner .statsRow .statsColumn .greenBackground {
+  background-color: #14b8a6;
+}
+.mainSection .mainSectionInner .statsRow .statsColumn .yellowBackground {
+  background-color: #ffb020;
+}
+.mainSection .mainSectionInner .statsRow .statsColumn .purpleBackground {
+  background-color: #5048e4;
+}
+.mainSection .mainSectionInner .statsRow .statsColumn .redBackground {
+  background-color: #E53835;
+}
+.mainSection .mainSectionInner .statsRow .statsColumn .columnIcon {
+  color: white;
+  padding: 10px 18px 15px 18px;
+  border-radius: 50%;
+  font-size: 25px;
+}
+.mainSection .mainSectionInner .statsRow .statsColumn span {
+  color: #5A5A5F;
+  font-size: 14px;
+}
+.mainSection .mainSectionInner .statsRow .statsColumn h6 {
+  font-weight: bold;
+  font-size: 30px;
+}
+.mainSection .mainSectionInner .redArrow {
+  color: #E53835;
+}
+.mainSection .mainSectionInner .greenArrow {
+  color: #14b8a6;
+}
+.mainSection .mainSectionInner .purpleBarProf {
+  opacity: 0;
+}
+.mainSection .mainSectionInner .purpleBar {
+  accent-color: #5048e4;
+  width: 100%;
+}
+.mainSection .mainSectionInner .chartHeading1 {
+  text-align: center;
+}
+.mainSection .mainSectionInner .chartHeading1 p {
+  color: #0B2360;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  margin: 0;
+  top: 10px;
+  position: relative;
+}
+.mainSection .mainSectionInner .chartHeading1 p::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: #0B2360;
+  width: 27%;
+  bottom: -12px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mainSection .mainSectionInner .chartHeading p {
+  margin: 0;
+  color: #5A5A5F;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+}
+.mainSection .mainSectionInner .box1 p {
+  margin: 0;
+  color: #0B2360;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.footer2 {
+  display: none;
+  margin-top: 30px;
+}
+.footer2 .footer {
+  background-color: #0B2360;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 28px;
+  height: 50px;
+}
+.footer2 .footer a {
+  color: white;
+}
+
+.callDialogBoxOuter {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  outline: none;
+  border: none;
+}
+.headerDark .headerInner {
+  background-color: #464255;
+}
+.headerDark .navRight p {
+  color: white !important;
+}
+.headerDark .searchBarHeader svg {
+  color: white !important;
+}
+.headerDark .searchBarHeader input {
+  background-color: #464255;
+  color: white;
+  outline: none;
+}
+.headerDark .searchBarHeader input::-moz-placeholder {
+  color: rgb(190, 190, 190);
+}
+.headerDark .searchBarHeader input::placeholder {
+  color: rgb(190, 190, 190);
+}
+
+.darkMain {
+  background-color: #222222;
+}
+
+.sideBarDark {
+  background-color: #222222;
+}
+
+.mainSectionWrapperDark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mainSectionWrapperDark .apexcharts-legend-text {
+  color: white !important;
+}
+.mainSectionWrapperDark .headingMainCon h3 {
+  color: white !important;
+}
+.mainSectionWrapperDark .mainListHeading {
+  color: white !important;
+}
+.mainSectionWrapperDark .mainListPara {
+  color: rgb(177, 177, 177) !important;
+}
+.mainSectionWrapperDark .accordion-button {
+  background-color: #464255 !important;
+  color: white !important;
+}
+.mainSectionWrapperDark .accordion-body {
+  background-color: #464255 !important;
+  color: white !important;
+}
+.mainSectionWrapperDark .checkboxBill label {
+  color: white;
+}
+.mainSectionWrapperDark .faqItem .headerInnerLeft p {
+  color: white !important;
+}
+.mainSectionWrapperDark table {
+  --bs-table-bg: #464255 !important;
+  --bs-table-color: $base-color2 !important;
+}
+.mainSectionWrapperDark table tbody tr td {
+  color: white !important;
+}
+.mainSectionWrapperDark table tbody tr td P {
+  color: white !important;
+}
+.mainSectionWrapperDark table tbody tr td .iconsChannel button svg {
+  color: white !important;
+}
+.mainSectionWrapperDark .pagination li {
+  color: white !important;
+}
+.mainSectionWrapperDark .privacySummary h6 {
+  color: white !important;
+}
+.mainSectionWrapperDark .privacySummary label {
+  color: white !important;
+}
+.mainSectionWrapperDark .profileCustomer {
+  color: white !important;
+}
+.mainSectionWrapperDark .formHeading5 {
+  color: white !important;
+}
+.mainSectionWrapperDark .addFields .AddInput button {
+  color: white;
+}
+.mainSectionWrapperDark .formField {
+  color: white !important;
+}
+.mainSectionWrapperDark .formField input {
+  background-color: #464255;
+  color: white !important;
+}
+.mainSectionWrapperDark .formField input::-moz-placeholder {
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .formField input::placeholder {
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .formField select {
+  background-color: #464255;
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .formField select::-moz-placeholder {
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .formField select::placeholder {
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .addfieldButton {
+  background-color: #222222;
+  color: white;
+}
+.mainSectionWrapperDark .fieldHead {
+  color: white !important;
+}
+.mainSectionWrapperDark .card {
+  background-color: #464255 !important;
+}
+.mainSectionWrapperDark .card .searchBar2 input {
+  background-color: #464255;
+  border: 1px solid white;
+  color: white;
+}
+.mainSectionWrapperDark .card .searchBar2 svg {
+  color: white !important;
+}
+.mainSectionWrapperDark .card .communicationChat input {
+  background-color: #464255 !important;
+  border: 1px solid white !important;
+  color: white !important;
+}
+.mainSectionWrapperDark .card p {
+  color: white !important;
+}
+.mainSectionWrapperDark .card h6 {
+  color: white !important;
+}
+.mainSectionWrapperDark .card small {
+  color: white !important;
+}
+.mainSectionWrapperDark .card .statsColumn.statCol span {
+  color: white !important;
+}
+.mainSectionWrapperDark .card .preferenceRight button {
+  color: white !important;
+}
+.mainSectionWrapperDark .card .billinBtnGroup {
+  background-color: #464255 !important;
+}
+.mainSectionWrapperDark .card .billingMainSearch {
+  background-color: #464255 !important;
+  border: 1px solid white !important;
+  color: white;
+  outline: none;
+}
+.mainSectionWrapperDark .card .billBtnGr {
+  color: white !important;
+}
+.mainSectionWrapperDark .card .headingNotification {
+  color: white;
+}
+.mainSectionWrapperDark .card .headingNotification .btnDropDown {
+  color: white;
+}
+.mainSectionWrapperDark .card .headingNotification .dropdownMenu li a {
+  color: black;
+}
+.mainSectionWrapperDark .card .headingNotification .dropdownMenu li a:hover {
+  color: white;
+}
+
+.chartHeading2 .chartHeading2InnerFirst {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.chartHeading2 .chartHeading2InnerSecond {
+  font-size: 20px;
+  font-weight: 500px;
+}
+.chartHeading2 .chartHeading2InnerFourth {
+  color: #262A41;
+  font-size: 30px;
+  font-weight: 600;
+}
+.chartHeading2 .chartHeading2InnerThird {
+  font-size: 13px;
+  color: grey;
+  font-weight: 400;
+}
+.chartHeading2 .chartHeading2InnerFifth {
+  color: #0B2360;
+  font-size: 44px;
+  font-weight: 500;
+}
+
+.AgentApp {
+  margin-bottom: 40px;
+}
+.AgentApp .channels {
+  height: auto;
+}
+.AgentApp .performanceTotalVisits {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.AgentApp .performanceTotalVisits .performanceSingleVisit {
+  display: flex;
+  justify-content: space-between;
+}
+.AgentApp .performanceTotalVisits .performanceSingleVisit .leftSide {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.AgentApp .performanceTotalVisits .performanceSingleVisit .leftSide svg {
+  font-size: 30px;
+  background-color: #0B2360;
+  padding: 5px;
+  border-radius: 50%;
+  color: white;
+}
+.AgentApp .performanceTotalVisits .performanceSingleVisit .leftSide .leftSidePara p {
+  margin-bottom: 0;
+}
+.AgentApp .performanceTotalVisits .performanceSingleVisit .leftSide .leftSidePara .leftSideLast {
+  color: #404852;
+}
+.AgentApp .customerReview {
+  height: 568px;
+  position: relative;
+}
+.AgentApp .customerReview .seeAllButtonDiv {
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+}
+.AgentApp .customerReview .seeAllButtonDiv button {
+  background-color: transparent;
+  border: none;
+  color: #343A40;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+.AgentApp .customerReview .seeAllButtonDiv button svg {
+  font-size: 30px;
+}
+.AgentApp .performanceCard .apexcharts-bar-area:hover {
+  fill: #0B2360 !important;
+}
+.AgentApp .performanceCard .apexcharts-xaxis {
+  display: none;
+}
+.AgentApp .performanceCard .apexcharts-ycrosshairs {
+  display: none;
+}
+.AgentApp .performanceCard .apexcharts-grid {
+  display: none;
+}
+.AgentApp .borderBottomMargin {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(185, 185, 185);
+}
+.AgentApp .cardSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.AgentApp .cardSpaceBetween .bottom {
+  color: #ADB5BD;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.AgentApp .cardSpaceBetween .left {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.AgentApp .cardSpaceBetween .left svg {
+  color: #FCC419;
+  font-size: 18px;
+}
+.AgentApp .cardSpaceBetween .left .name {
+  display: flex;
+  gap: 10px;
+}
+.AgentApp .cardSpaceBetween .LeftSide {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.AgentApp .cardSpaceBetween .LeftSide img {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background-color: #F5F5F5;
+  border-radius: 50%;
+}
+.AgentApp .cardSpaceBetween .LeftSide .chartHeading2 .chartHeading2InnerSecond {
+  font-size: 18px;
+}
+.AgentApp .cardSpaceBetween .LeftSide .chartHeading2 p {
+  margin-bottom: 0;
+}
+.AgentApp .cardSpaceBetween .RightSide button {
+  background-color: transparent;
+  border: none;
+}
+.AgentApp .cardSpaceBetween .customerReviewSelect {
+  border: 1px solid white;
+  outline: none;
+}
+.AgentApp .overlappingUser {
+  position: relative;
+  width: 105px;
+}
+.AgentApp .overlappingUser img {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+.AgentApp .overlappingUser .img1 {
+  left: 0;
+}
+.AgentApp .overlappingUser .img2 {
+  left: 25px;
+}
+.AgentApp .overlappingUser .img3 {
+  left: 50px;
+}
+.AgentApp .overlappingUser .img4 {
+  left: 75px;
+}
+.AgentApp .cardHeightChannel {
+  height: 722px;
+}
+.AgentApp .cardHeightChannel .card-body {
+  flex: 0;
+}
+.AgentApp .addChannelIcon {
+  margin: 0 auto;
+}
+.AgentApp .addChannelIcon button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  gap: 5px;
+  background-color: transparent;
+  color: #0B2360;
+}
+.AgentApp .addChannelIcon button svg {
+  font-size: 36px;
+}
+.AgentApp .addChannelIcon button span {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 800;
+}
+.AgentApp .tableHeight {
+  height: 300px;
+}
+.AgentApp .apexcharts-legend .apexcharts-legend-series .apexcharts-legend-marker {
+  background-color: #0B2360 !important;
+}
+.AgentApp .radialChartrelative {
+  position: relative;
+  height: 350px;
+}
+.AgentApp .radialChartrelative .radialChartAbsolute {
+  position: absolute;
+}
+.AgentApp .radialChartrelative .radial1 {
+  left: 129px;
+  bottom: 63px;
+}
+.AgentApp .radialChartrelative .radial2 {
+  left: -50px;
+  bottom: 0px;
+}
+.AgentApp .radialChartrelative .radial3 {
+  left: -44px;
+}
+.AgentApp .cardMainHeading {
+  font-size: 15px;
+  font-weight: 600;
+}
+.AgentApp .basicInfoContainer {
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #bbbbbb;
+}
+.AgentApp .basicInfoContainer .basicInfoWrapper .basicInfoHeading {
+  color: #5E5E5E;
+  margin-bottom: 0px;
+  font-weight: 500;
+  font-size: 12px;
+}
+.AgentApp .basicInfoContainer .basicInfoWrapper .basicInfoPara {
+  color: #5E5E5E;
+  font-size: 12px;
+  font-weight: 400;
+}
+.AgentApp .customerName {
+  overflow: auto;
+  scrollbar-gutter: stable;
+  height: 661px;
+  padding: 0px 4px;
+}
+.AgentApp .customerName .customerElement {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid rgb(189, 189, 189);
+  gap: 10px;
+}
+.AgentApp .customerName .customerElement img {
+  width: 32px;
+  height: 32px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.AgentApp .customerName .customerElement p {
+  margin: 0;
+  align-self: center;
+  font-size: 12px;
+}
+.AgentApp .customerName .customerElement small {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 10px;
+}
+.AgentApp .complianceeReview .viewAllButton {
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+  margin-top: 40px;
+  padding: 10px 0 10px 0;
+  border-top: 1px solid rgb(201, 201, 201);
+  color: #0B2360;
+  font-weight: 600;
+}
+.AgentApp .complianceeReview .complianceHeading {
+  margin: 10px 0 30px 0;
+}
+.AgentApp .complianceeReview .carrotGreen {
+  color: green;
+}
+.AgentApp .complianceeReview .carrotRed {
+  color: red;
+}
+.AgentApp .complianceeReview .LeftSide img {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+}
+.AgentApp .SortingContainer {
+  display: flex;
+  align-items: center;
+}
+.AgentApp .SortingContainer .customSelectCompliance {
+  flex: 1;
+  position: relative;
+}
+.AgentApp .SortingContainer .customSelectCompliance .carretArrowSelect {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  font-size: 12px;
+  transform: translate(-50%, -50%);
+}
+.AgentApp .SortingContainer .customSelectCompliance .complianceSelect {
+  border: 1px solid white;
+  outline: none;
+  font-weight: bold;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+}
+.AgentApp .containerGraphCompliance {
+  height: 100px;
+}
+.AgentApp .containerGraphCompliance .percentage {
+  font-size: 24px;
+  font-weight: 700;
+}
+.AgentApp .checkBoxSlider {
+  margin-right: 30px;
+  display: flex;
+  gap: 10px;
+  /* Hide default HTML checkbox */
+  /* The slider */
+  /* Rounded sliders */
+}
+.AgentApp .checkBoxSlider p {
+  margin-bottom: 0;
+  color: #5A5A5F;
+  font-size: 20px;
+  font-weight: 500;
+}
+.AgentApp .checkBoxSlider .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 29px;
+}
+.AgentApp .checkBoxSlider .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.AgentApp .checkBoxSlider .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid #ccc;
+  transition: 0.4s;
+}
+.AgentApp .checkBoxSlider .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 13px;
+  bottom: -8.5px;
+  transform: translate(-50%, -50%);
+  background-color: #ccc;
+  transition: 0.4s;
+}
+.AgentApp .checkBoxSlider input:checked + .slider {
+  background-color: #0B2360;
+  border: 3px solid transparent;
+}
+.AgentApp .checkBoxSlider input:focus + .slider {
+  box-shadow: 0 0 1px #0B2360;
+}
+.AgentApp .checkBoxSlider input:checked + .slider:before {
+  background-color: white;
+  transform: translate(18px, -10px);
+}
+.AgentApp .checkBoxSlider .slider.round {
+  border-radius: 34px;
+}
+.AgentApp .checkBoxSlider .slider.round:before {
+  border-radius: 50%;
+}
+.AgentApp .workflowTable {
+  margin-top: 30px;
+}
+.AgentApp .workflowTable select {
+  border: 1px solid white;
+}
+.AgentApp .workflowTable .workFlowButtonTheme {
+  background-color: #0B2360;
+  border: none;
+  color: white;
+  transition: all 0.1 ease-in;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+.AgentApp .workflowTable .workFlowButtonTheme:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+.AgentApp .workflowTable table tr td {
+  vertical-align: middle;
+  text-align: center;
+}
+.AgentApp .workflowStats {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: center;
+}
+.AgentApp .workflowStats img {
+  background-color: #f4f7fe;
+  border-radius: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 10px;
+  margin-right: 20px;
+}
+.AgentApp .workflowStats .textStats {
+  flex-grow: 1;
+}
+.AgentApp .workflowStats .textStats p {
+  margin-bottom: 0;
+}
+.AgentApp .workflowStats .textStats .firstPara {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+.AgentApp .workflowStats .textStats .valuePara {
+  color: #1B2559;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+}
+.AgentApp .cardWorkflowSpace {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.adminTrafficMain {
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+  gap: 10px;
+  height: 295px;
+}
+.adminTrafficMain .adminTrafficContain {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.adminTrafficMain .adminTrafficContain span {
+  white-space: nowrap;
+  width: 72px;
+}
+.adminTrafficMain .adminTrafficContain progress {
+  accent-color: black;
+}
+
+.adminDashboardChart {
+  margin-top: 20px;
+}
+
+.chartHeading3 {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mainContactActivities {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  row-gap: 50px;
+}
+.mainContactActivities .contactActivityMain {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 260px;
+  max-width: 260px;
+  gap: 10px;
+}
+.mainContactActivities .contactActivityMain .contactContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.mainContactActivities .contactActivityMain .contactContainer img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mainContactActivities .contactActivityMain .activityContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.mainContactActivities .contactActivityMain .activityContainer img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mainContactActivities .contactActivityMain .activityContainer .activityInfo p {
+  margin-bottom: 0;
+}
+.mainContactActivities .contactActivityMain .activityContainer .activityInfo small {
+  color: rgb(184, 184, 184);
+}/*# sourceMappingURL=App.css.map */
