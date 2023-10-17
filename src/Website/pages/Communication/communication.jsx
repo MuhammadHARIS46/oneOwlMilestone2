@@ -9,7 +9,7 @@ import ProfileImg from "../../../assets/images/guy.png";
 import { FaVideo, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { CallFunctionality } from "../../components/callFunctionality";
-import { CommunicationApi } from "../../../services/customerApis/communication";
+import { CommunicationApi } from "../../../services/customerApis/Communication";
 
 const Communication = () => {
   const [agentList, setAgentList] = useState([
