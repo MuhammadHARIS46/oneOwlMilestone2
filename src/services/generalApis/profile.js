@@ -1,4 +1,3 @@
-import React from 'react'
 import AxiosSettings from '../axiosSettings';
 import Base from '../base';
 
@@ -10,8 +9,10 @@ export const generalApi = () => {
     const putUpdateProfile = (data) => {
         return axiosInstance.put(`${baseUrl}/user`, data);
     }
-  
+    const getUserDetail = () =>{
+        return axiosInstance.get(`${baseUrl}/user/me`)
+    }
 
 
-    return { putUpdateProfile }
+    return { putUpdateProfile,getUserDetail }
 }

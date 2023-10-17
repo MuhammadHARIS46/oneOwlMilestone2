@@ -2,12 +2,20 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { useSnackbar } from "notistack";
+import "./styles.css";
+import Logo from "../../../assets/images/Logo.svg";
+import Google from "../../../assets/images/google 1.svg";
+import Facebook from "../../../assets/images/facebook 1.svg";
+import Scope from "../../../assets/images/Scope.svg";
+import ChannelExp from "../../../assets/images/ChannelExp.svg";
+import TokenService from "../../../services/tokenService";
 
 const Signup = () => {
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
   });
+  const [cPass,setCPass] = useState("")
   let navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
 
@@ -23,6 +31,13 @@ const Signup = () => {
 
       return;
     }
+    if(password !== cPass) {
+      enqueueSnackbar("Passwords do not match", {
+        variant: "error",
+        autoHideDuration: 2000,
+      });
+      return
+    }
 
     try {
       const response = await axios.post(
@@ -37,22 +52,22 @@ const Signup = () => {
       const data = response.data;
 
       if (data.idToken) {
-        localStorage.setItem("token", data.idToken);
+        TokenService().updateToken(data.idToken);
         navigate("/dashboard");
         enqueueSnackbar("User created successfully", {
           variant: "success",
-          autoHideDuration: 3000,
+          autoHideDuration: 2000,
         });
       } else {
         enqueueSnackbar("Invalid credentials", {
           variant: "error",
-          autoHideDuration: 3000,
+          autoHideDuration: 2000,
         });
       }
     } catch (error) {
       enqueueSnackbar("An error occurred", {
         variant: "error",
-        autoHideDuration: 3000,
+        autoHideDuration: 2000,
       });
     }
   };
@@ -62,52 +77,164 @@ const Signup = () => {
   };
 
   return (
-    <div className="container mt-2">
-      <h2 className="my-3">Create an account</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email address</label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            aria-describedby="emailHelp"
-            name="email"
-            onChange={onChange}
-            placeholder="Enter email"
-          />
+
+    <>
+      <div className="signUpMain">
+        <div className="signUpImageContainer">
+          <div className="experienceBox">
+            <img src={Scope} alt="Scope" />
+            <p className="topNotchpara">
+              More and more, customers move across all channels—in person,
+              online, and beyond—to get what they want
+            </p>
+          </div>
+          <img src={ChannelExp} alt="exp" className="ScopeImg" />
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            name="password"
-            onChange={onChange}
-            placeholder="Password"
-            minLength={5}
-            required
-          />
+
+        <div className="leftContainer">
+          <div className="logoBox">
+            <img src={Logo} alt="owl" />
+          </div>
+          <h2
+            style={{
+              textAlign: "center",
+            }}
+          >
+            Get Started
+          </h2>
+          <p
+            style={{
+              textAlign: "center",
+              color: "#7E7E7E",
+              fontSize: "15.035px",
+              fontStyle: "normal",
+              fontWeight: 400,
+              lineHeight: "10.9px",
+            }}
+          >
+            Getting started is easy
+          </p>
+          <div className="fbGoogleBtnWrap">
+            <button className="iconBtn">
+              <img src={Google} alt="Facebook" />
+              <p
+                style={{
+                  marginBottom: 0,
+                }}
+              >
+                Google
+              </p>
+            </button>
+            <button className="iconBtn">
+              <img src={Facebook} alt="Facebook" />
+              <p
+                style={{
+                  marginBottom: 0,
+                }}
+              >
+                Facebook
+              </p>
+            </button>
+          </div>
+          <div className="continueWith">
+            <div
+              style={{
+                strokeWidth: "1px",
+                stroke: "#DBDBDB",
+              }}
+            ></div>
+            <p>or continue with</p>
+            <div
+              style={{
+                strokeWidth: "1px",
+                stroke: "#DBDBDB",
+              }}
+            ></div>
+          </div>
+          <form onSubmit={handleSubmit} className="formBox">
+            <input
+              // type="email"
+              className="form-control"
+              // value={credentials.email}
+              onChange={() => {}}
+              // id="email"
+              // name="email"
+              // aria-describedby="emailHelp"
+              placeholder="Full Name"
+              style={{
+                height: "55px",
+              }}
+            />
+            <input
+              type="email"
+              className="form-control"
+              value={credentials.email}
+              onChange={onChange}
+              id="email"
+              name="email"
+              aria-describedby="emailHelp"
+              placeholder="Email"
+              style={{
+                height: "55px",
+              }}
+            />
+            <input
+              type="password"
+              className="form-control"
+              value={credentials.password}
+              onChange={onChange}
+              name="password"
+              id="password"
+              placeholder="Password"
+              style={{
+                height: "55px",
+              }}
+            />
+            <input
+              type="password"
+              className="form-control"
+              value={cPass}
+              onChange={(e) => {
+                setCPass(e.target.value)
+              }}
+              name="password"
+              id="password"
+              placeholder="Confirm password"
+              style={{
+                height: "55px",
+              }}
+            />
+            <button type="submit" className="signUpBtn">
+              Create Account
+            </button>
+            <div className="noAccBox">
+              have an account?{" "}
+              <span>
+                <Link
+                  to="/login"
+                  style={{
+                    textDecoration: "none",
+                  }}
+                >
+                  <p
+                    style={{
+                      color: "#0B2360",
+                      fontWeight: "700",
+                    }}
+                  >
+                    Login
+                  </p>
+                </Link>
+              </span>
+            </div>
+            <p className="termOfUse">
+              By continuing you indicate that you read and agreed to the Terms
+              of Use
+            </p>
+          </form>
         </div>
-        <button
-          type="submit"
-          className="btn btn-primary"
-          style={{
-            marginTop: "10px",
-          }}
-        >
-          Submit
-        </button>
-        <div>
-          Already have an account!{" "}
-          <span>
-            <Link to="/login">Click here</Link>
-          </span>{" "}
-          to login.
-        </div>
-      </form>
-    </div>
+      </div>
+    </>
   );
 };
 
