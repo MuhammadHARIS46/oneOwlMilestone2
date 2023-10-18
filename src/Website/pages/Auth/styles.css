@@ -62,9 +62,9 @@
 }
 .signUpBtn {
   border-radius: 5px;
-  background-color: #0b2360;
+  background-color: #F1C46D;
   width: -webkit-fill-available;
-  color: white;
+  color: black;
   font-size: 14.85px;
   height: 55px;
 }

@@ -1,10 +1,9 @@
-import React, { createContext, useEffect, useState } from "react";
+// createContext
+import React, { useEffect, useState } from "react";
 import "./styles/App.css";
 import "./styles/responsive.css";
-import { Sidebar } from "./Website/components/sidebar";
-// import 'react-toastify/dist/ReactToastify.css';
 // import { ExternalRoutes } from './routing/routes';
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { ROUTES } from "../utils/routes";
 import { Dashboard } from "./Website/pages/Dashboard/dashboard";
 import { Layout } from "./Website/layout";
@@ -22,7 +21,7 @@ import { Performance } from "./Website/pages/Performance/performance";
 import { Compliance } from "./Website/pages/compliance/compliance";
 import { Workflow } from "./Website/pages/workflow/workflow";
 
-import { UserNameContext, ThemeContext } from "./services/contextFile";
+// import { UserNameContext, ThemeContext } from "./services/contextFile";
 import { DarkMode } from "./services/darkMode";
 import ReactGA from "react-ga4";
 import { DashboardAdmin } from "./Website/pages/AdminDashboard/dashboardAdmin";
@@ -62,6 +61,7 @@ function App() {
 
   useEffect(() => {
     setIsDarkMode(getDarkMode());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const location = useLocation();
@@ -81,8 +81,9 @@ function App() {
   return (
     <React.Fragment>
       <Routes>
-        <Route path={ROUTES.LOGIN} element={<Login />} />
         <Route path={ROUTES.SIGNUP} element={<Signup />} />
+        <Route path={ROUTES.LOGIN} element={<Login />} />
+
         <Route element={<Layout />}>
           <Route
             path={ROUTES.DASHBOARD}

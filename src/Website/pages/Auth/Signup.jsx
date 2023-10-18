@@ -9,6 +9,7 @@ import Facebook from "../../../assets/images/facebook 1.svg";
 import Scope from "../../../assets/images/Scope.svg";
 import ChannelExp from "../../../assets/images/ChannelExp.svg";
 import TokenService from "../../../services/tokenService";
+import {ROUTES} from "../../../../utils/routes" 
 
 const Signup = () => {
   const [credentials, setCredentials] = useState({
@@ -211,7 +212,7 @@ const Signup = () => {
               have an account?{" "}
               <span>
                 <Link
-                  to="/login"
+                  to={ROUTES.LOGIN}
                   style={{
                     textDecoration: "none",
                   }}

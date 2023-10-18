@@ -11,6 +11,7 @@ import { ROUTES } from "../../../utils/routes";
 export const Footer = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("role")
   };
   return (
     <footer className="footer2">
@@ -24,7 +25,7 @@ export const Footer = () => {
         <Link>
           <BsQuestionCircle />
         </Link>
-        <Link to="/login" onClick={handleLogout}>
+        <Link to={ROUTES.LOGIN} onClick={handleLogout}>
           <LuLogOut />
         </Link>
         <Link to={ROUTES.NOTIFICATION}>
