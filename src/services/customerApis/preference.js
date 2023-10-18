@@ -7,7 +7,7 @@ export const PreferenceApi = () => {
     const { axiosInstance } = AxiosSettings()
 
     const getUserNotification = () => {
-        return axiosInstance.get(`${baseUrl}/user/notification`);
+        return axiosInstance.get(`${baseUrl}/user/notifications`);
     }
     const getUserActivities = () => {
         return axiosInstance.get(`${baseUrl}/user/activities`);

@@ -8,9 +8,22 @@ import ReactPaginate from 'react-paginate';
 import starImg from '../../../assets/images/plusSign.svg'
 import { AiFillStar } from 'react-icons/ai';
 import { MdKeyboardArrowRight } from 'react-icons/md';
-
+// import { PerformanceApi } from '../../../services/agentApis/Performance';
 export const Performance = () => {
+    // const { getReview } = PerformanceApi()
 
+    // const [review,setReview] = useState([])
+    // const getReviews = async()=>{
+    //     try {
+    //         const response = await getUserConversations();
+    //         setReview(response?.data?.data);
+    //       } catch (err) {
+    //         console.log("error", err);
+    //       }
+    // }
+    // useEffect(() => {
+    //     getReviews()
+    // }, [])
     const barChart = {
         series: [{
             name: 'Today',

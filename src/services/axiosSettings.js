@@ -1,8 +1,6 @@
-import React from 'react'
 import Base from './base';
 import axios from 'axios';
 import TokenService from './tokenService';
-// import TokenService from './tokenService';
 
 const AxiosSettings = () => {
     const { baseURL } = Base();

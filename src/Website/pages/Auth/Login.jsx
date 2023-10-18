@@ -9,13 +9,39 @@ import Facebook from "../../../assets/images/facebook 1.svg";
 import "./styles.css";
 import Form from "react-bootstrap/Form";
 import thumbsUp from "../../../assets/images/thumbsUp.svg";
+import {ROUTES} from "../../../../utils/routes" 
 const Login = () => {
+
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
   });
   let navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
+
+  const UserDetail = async() =>{
+    try{
+      const {token} = TokenService();
+      const response = await axios.get("http://54.210.253.228/api/user/me",{
+        headers: {
+          Authorization: `Bearer ${token}`
+      }
+      })
+      localStorage.setItem("role",response.data.role)
+      if(response.data.role==="agent"){
+        navigate(ROUTES.DASHBOARD_AGENT)
+      }
+      if(response.data.role==="admin"){
+        navigate(ROUTES.DASHBOARD_ADMIN)
+      }
+      if(response.data.role==="user"){
+        navigate(ROUTES.DASHBOARD)
+      }
+    }
+    catch(err){
+      console.log("error",err)
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,12 +69,12 @@ const Login = () => {
       const data = response.data;
 
       if (data.idToken) {
-        TokenService().updateToken(data.idToken); // Update the token using TokenService
-        navigate("/dashboard");
+        TokenService().updateToken(data.idToken);
         enqueueSnackbar("Logged in successfully", {
           variant: "success",
           autoHideDuration: 2000,
         });
+        UserDetail()
       } else {
         enqueueSnackbar("Invalid credentials", {
           variant: "error",
@@ -153,14 +179,12 @@ const Login = () => {
               }}
             />
             <div className="recoverPasswordWrap">
-              <Form>
                 <Form.Check // prettier-ignore
                   type="switch"
                   id="custom-switch"
                   label="Remeber me"
                   className="switchLabel"
                 />
-              </Form>
               <p className="recoverPass" >Recover password</p>
             </div>
             <button type="submit" className="loginBtn">
@@ -170,7 +194,7 @@ const Login = () => {
               Do not have an account?{" "}
               <span>
                 <Link
-                  to="/signup"
+                  to={ROUTES.SIGNUP}
                   style={{
                     textDecoration: "none",
                   }}

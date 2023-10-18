@@ -1,13 +1,13 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import BodyComponent from '../../components/bodyComponent';
-import StatsBar from '../../components/stats';
+// import StatsBar from '../../components/stats';
 import ReactApexChart from 'react-apexcharts';
-import { useEffect } from 'react';
-import { useRef } from 'react';
-
+import {DashboardApi} from "../../../services/agentApis/dashboard"
 
 export const DashboardAgent = () => {
 
+  // getAvgResponseTime bottom
+  const {getConversationRate} = DashboardApi()
 
   const options = {
     series: [{
@@ -229,7 +229,31 @@ export const DashboardAgent = () => {
     },
   };
 
-
+  const [convoRate,setConvoRate] = useState()
+  // const [avgTime,setAvgTime] = useState()
+  const getConvoRate = async () =>{
+    try{
+      const response = await getConversationRate();
+      setConvoRate(response?.data?.data)
+    }
+    catch(err){
+      console.log("error",err)
+    }
+  }
+  // const getAvgResTime = async() =>{
+  //   try{
+  //     const response = await getAvgResponseTime();
+  //     setAvgTime(response?.data?.data)
+  //   }
+  //   catch(err){
+  //     console.log("error",err)
+  //   }
+  // }
+  useEffect(() => {
+    getConvoRate()
+    // getAvgResTime()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <React.Fragment>

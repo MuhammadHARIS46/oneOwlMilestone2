@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import BodyComponent from '../../components/bodyComponent'
 import { AiOutlineClose, AiOutlineWarning } from 'react-icons/ai'
 import ReactPaginate from 'react-paginate';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
-
+import {NotificationApi} from "../../../services/generalApis/Notification"
 export const Notification = () => {
 
-
-
+    const {ReadMyNotification} = NotificationApi()
 
     function getCurrentTime() {
         const now = new Date();
@@ -31,38 +30,48 @@ export const Notification = () => {
 
     const [data, setData] = useState([
         {
+            id:1,
             notificationHeader: 'Unread Notification - notification1',
             notificationBody: 'This section will prvide the description of error in detail. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus.'
         },
         {
+            id:2,
+
             notificationHeader: 'Unread Notification - notification2',
             notificationBody: 'This section will prvide the description of error in detail. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus.'
         },
         {
+            id:3,
+
             notificationHeader: 'Unread Notification - notification3',
             notificationBody: 'This section will prvide the description of error in detail. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus.'
         },
         {
+            id:4,
             notificationHeader: 'Unread Notification - notification4',
             notificationBody: 'This section will prvide the description of error in detail. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus.'
         },
         {
+            id:5,
             notificationHeader: 'Unread Notification - notification5',
             notificationBody: 'This section will prvide the description of error in detail. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus.'
         },
         {
+            id:6,
             notificationHeader: 'Unread Notification - notification6',
             notificationBody: 'This section will prvide the description of error in detail. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus.'
         },
         {
+            id:7,
+            notificationHeader: 'Unread Notification - notification6',
+            notificationBody: 'This section will prvide the description of error in detail. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus.'
+        },
+        {id:9,
             notificationHeader: 'Unread Notification - notification6',
             notificationBody: 'This section will prvide the description of error in detail. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus.'
         },
         {
-            notificationHeader: 'Unread Notification - notification6',
-            notificationBody: 'This section will prvide the description of error in detail. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus.'
-        },
-        {
+            id:10,
             notificationHeader: 'Unread Notification - notification6',
             notificationBody: 'This section will prvide the description of error in detail. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non mollis lacus.'
         },
@@ -103,6 +112,15 @@ export const Notification = () => {
     const closeModal = () => {
         setIsLogoutModalOpen(false);
     };
+    const readMyNotification = async(id)=>{
+        try{
+            const response = await ReadMyNotification(id)
+            console.log(response.data.data)
+        }
+        catch(err){
+            console.log("error",err)
+        }
+    }
 
     return (
         <React.Fragment>
@@ -135,6 +153,7 @@ export const Notification = () => {
                                     <button className="View" onClick={() => {
                                         setSelectedItemHeader(item.notificationHeader);
                                         setSelectedItemBody(item.notificationBody);
+                                        readMyNotification(item.id)
                                         openModal();
                                     }}>
                                         View

@@ -66,8 +66,10 @@ export const Sidebar = () => {
   const handleLogout = () => {
     setIsLogoutModalOpen(false);
     localStorage.removeItem("token");
-    navigate("/login");
+    localStorage.removeItem("role");
+    navigate(ROUTES.LOGIN);
   };
+  const role = localStorage.getItem("role");
   return (
     <>
       <aside id="sidebar" className={sideBar ? "sidebarwidth" : "sidebar"}>
@@ -79,111 +81,177 @@ export const Sidebar = () => {
           </div>
           <ul className="sidebar-nav" id="sidebar-nav">
             {/* AGENT MENUS  */}
+            {role === "agent" && (
+              <>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.DASHBOARD_AGENT}
+                    onClick={closeMobileButton}
+                  >
+                    <GoHome className="sideIcon" />
+                    <span>Dashboard</span>
+                  </NavLink>
+                </li>
 
-            {/* <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD_AGENT} onClick={closeMobileButton}>
-                                <GoHome className='sideIcon' /><span>Dashboard</span>
-                            </NavLink>
-                        </li>
-
-                        
-                        <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.SERVICE} onClick={closeMobileButton}>
-                                <PiArrowSquareDown className='sideIcon' /><span>Service</span>
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PERFORMANCE} onClick={closeMobileButton}>
-                                <LiaEdit className='sideIcon' /><span>Performance</span>
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.COMPLIANCE} onClick={closeMobileButton}>
-                                <LiaListAltSolid className='sideIcon' /><span>Complliance</span>
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.WORKFLOW} onClick={closeMobileButton}>
-                                <PiTruckLight className='sideIcon' /><span>Workflow</span>
-                            </NavLink>
-                        </li>  */}
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.SERVICE}
+                    onClick={closeMobileButton}
+                  >
+                    <PiArrowSquareDown className="sideIcon" />
+                    <span>Service</span>
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.PERFORMANCE}
+                    onClick={closeMobileButton}
+                  >
+                    <LiaEdit className="sideIcon" />
+                    <span>Performance</span>
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.COMPLIANCE}
+                    onClick={closeMobileButton}
+                  >
+                    <LiaListAltSolid className="sideIcon" />
+                    <span>Complliance</span>
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.WORKFLOW}
+                    onClick={closeMobileButton}
+                  >
+                    <PiTruckLight className="sideIcon" />
+                    <span>Workflow</span>
+                  </NavLink>
+                </li>
+              </>
+            )}
 
             {/* CUSTOMER MENUS  */}
+            {role === "user" && (
+              <>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.DASHBOARD}
+                    onClick={closeMobileButton}
+                  >
+                    <GoHome className="sideIcon" />
+                    <span>Dashboard</span>
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.COMMUNICATION}
+                    onClick={closeMobileButton}
+                  >
+                    <PiArrowSquareDown className="sideIcon" />
+                    <span>Communication</span>
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.PREFERENCE}
+                    onClick={closeMobileButton}
+                  >
+                    <LiaEdit className="sideIcon" />
+                    <span>Preference</span>
+                  </NavLink>
+                </li>
 
-            {/* <li className="nav-item">
-              <NavLink
-                className="nav-link  collapsed"
-                activeclassname="active"
-                to={ROUTES.DASHBOARD}
-                onClick={closeMobileButton}
-              >
-                <GoHome className="sideIcon" />
-                <span>Dashboard</span>
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link  collapsed"
-                activeclassname="active"
-                to={ROUTES.COMMUNICATION}
-                onClick={closeMobileButton}
-              >
-                <PiArrowSquareDown className="sideIcon" />
-                <span>Communication</span>
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link  collapsed"
-                activeclassname="active"
-                to={ROUTES.PREFERENCE}
-                onClick={closeMobileButton}
-              >
-                <LiaEdit className="sideIcon" />
-                <span>Preference</span>
-              </NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink
-                className="nav-link  collapsed"
-                activeclassname="active"
-                to={ROUTES.BILLING}
-                onClick={closeMobileButton}
-              >
-                <LiaListAltSolid className="sideIcon" />
-                <span>Billing</span>
-              </NavLink>
-            </li> */}
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.BILLING}
+                    onClick={closeMobileButton}
+                  >
+                    <LiaListAltSolid className="sideIcon" />
+                    <span>Billing</span>
+                  </NavLink>
+                </li>
+              </>
+            )}
 
             {/* ADMIN MENU  */}
+            {role === "admin" && (
+              <>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.DASHBOARD_ADMIN}
+                    onClick={closeMobileButton}
+                  >
+                    <AiOutlineUser className="sideIcon" />
+                    <span>Dashboard</span>
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.USER_MANAGEMENT}
+                    onClick={closeMobileButton}
+                  >
+                    <PiArrowSquareDown className="sideIcon" />
+                    <span>Management</span>
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.CHANNELS}
+                    onClick={closeMobileButton}
+                  >
+                    <LiaEdit className="sideIcon" />
+                    <span>Channels</span>
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.ADMINCOMPLIANCE}
+                  >
+                    <LiaListAltSolid className="sideIcon" />
+                    <span>Compliance</span>
+                  </NavLink>
+                </li>
 
-            <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD_ADMIN} onClick={closeMobileButton}>
-                                <AiOutlineUser className='sideIcon' /><span>Dashboard</span>
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.USER_MANAGEMENT} onClick={closeMobileButton}>
-                                <PiArrowSquareDown className='sideIcon' /><span>Management</span>
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.CHANNELS} onClick={closeMobileButton}>
-                                <LiaEdit className='sideIcon' /><span>Channels</span>
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.ADMINCOMPLIANCE}>
-                                <LiaListAltSolid className='sideIcon' /><span>Compliance</span>
-                            </NavLink>
-                        </li>
-
-                        <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PRIVACY}>
-                                <PiTruckLight className='sideIcon' /><span>Data Privacy</span>
-                            </NavLink>
-                        </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link  collapsed"
+                    activeclassname="active"
+                    to={ROUTES.PRIVACY}
+                  >
+                    <PiTruckLight className="sideIcon" />
+                    <span>Data Privacy</span>
+                  </NavLink>
+                </li>
+              </>
+            )}
 
             <li className="nav-item">
               <NavLink
