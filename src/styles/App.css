@@ -340,7 +340,8 @@ a {
   color: #aa97b0;
 }
 .sideBarInner .sidebar-nav .nav-item .active {
-  background-color: #0B2360;
+  /* background-color: #0B2360; */
+  background-color: #0B2360
 }
 .sideBarInner .sidebar-nav .nav-item .active .sideIcon {
   color: white;
@@ -773,6 +774,7 @@ header .headerInner .menuButton svg {
 .mainSection .profileCustomer {
   color: #0B2360;
   font-size: 40px;
+  font-weight:700
 }
 .mainSection .formHeading5 {
   font-size: 30px;

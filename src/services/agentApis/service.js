@@ -1,4 +1,3 @@
-import React from 'react'
 import AxiosSettings from '../axiosSettings';
 import Base from '../base';
 
@@ -13,8 +12,5 @@ export const ServiceApi = () => {
     const getUserConvoSummary = () => {
         return axiosInstance.get(`${baseUrl}/conversation/summary/me`);
     }
-  
-
-
     return { getUserConvoSummary, getUserConversations }
 }

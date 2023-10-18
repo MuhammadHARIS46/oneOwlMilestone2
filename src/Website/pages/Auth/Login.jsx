@@ -179,14 +179,12 @@ const Login = () => {
               }}
             />
             <div className="recoverPasswordWrap">
-              <Form>
                 <Form.Check // prettier-ignore
                   type="switch"
                   id="custom-switch"
                   label="Remeber me"
                   className="switchLabel"
                 />
-              </Form>
               <p className="recoverPass" >Recover password</p>
             </div>
             <button type="submit" className="loginBtn">

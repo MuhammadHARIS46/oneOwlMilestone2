@@ -5,9 +5,22 @@ import MessagingImg from '../../../assets/images/Messaging.svg'
 import CheckmarkImg from '../../../assets/images/Checkmark.svg'
 import UserImg from '../../../assets/images/User.svg'
 import InboxImg from '../../../assets/images/Inbox.svg'
-
+// import {WorkflowApi} from "../../../services/agentApis/Workflow"
 export const Workflow = () => {
-    return (
+    // const { getSchedule } = WorkflowApi()
+        // const [schedule,setSchedule] = useState([])
+    // const getUserSchedule = async()=>{
+    //     try {
+    //         const response = await getSchedule();
+    //         setSchedule(response?.data?.data);
+    //       } catch (err) {
+    //         console.log("error", err);
+    //       }
+    // }
+    // useEffect(() => {
+    //     getUserSchedule()
+    // }, [])
+     return (
         <React.Fragment>
             <BodyComponent>
                 <div className="row g-3 AgentApp">

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import BodyComponent from '../../components/bodyComponent'
-import { AiOutlineWarning } from 'react-icons/ai'
+// import { AiOutlineWarning } from 'react-icons/ai'
 import profileImg from '../../../assets/images/guy.png'
 import ReactPaginate from 'react-paginate';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
@@ -60,7 +60,7 @@ export const Faq = () => {
                     {
                         displayedItems.map((item, keyId) => (
 
-                            <div className="faqItem">
+                            <div className="faqItem" key={keyId}>
                                 <div className="faqHeader">
                                     <div className="faqHeaderLeft">
                                         <img src={profileImg} alt="" />

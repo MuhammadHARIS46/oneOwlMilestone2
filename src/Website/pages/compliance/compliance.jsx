@@ -2,13 +2,44 @@ import React from 'react'
 import BodyComponent from '../../components/bodyComponent'
 import { BiSolidDownArrow, BiSolidUpArrow } from 'react-icons/bi'
 import ReactApexChart from 'react-apexcharts';
-import { BsThreeDotsVertical } from 'react-icons/bs';
-import { AiFillStar } from 'react-icons/ai';
-import { MdKeyboardArrowRight, MdOutlineKeyboardArrowRight } from 'react-icons/md';
+// import { BsThreeDotsVertical } from 'react-icons/bs';
+// import { AiFillStar } from 'react-icons/ai';
+// MdKeyboardArrowRight bottom
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import agentImg from '../../../assets/images/guy.png'
-
+// import {ComplianceApi} from "../../../services/agentApis/Compliance"
 
 export const Compliance = () => {
+
+    // const { getConversationAnalytics, getUserAgentConvo } = ComplianceApi()
+
+    // const [analytics,setAnalytics] = useState()
+    // const [convo,setConvo] = useState([])
+    // const getConvoAnalytics = async()=>{
+    //     try{
+    //         const response = await getConversationAnalytics();
+    //         setAnalytics(response?.data?.data)
+    //       }
+    //       catch(err){
+    //         console.log("error",err)
+    //       }
+    // }
+    // const getConvo = async()=>{
+    //     try{
+    //         const response = await getUserAgentConvo();
+    //         setConvo(response?.data?.data)
+    //       }
+    //       catch(err){
+    //         console.log("error",err)
+    //       }
+    // }
+
+    // useEffect(() => {
+    //     getConvoAnalytics()
+    //     getConvo()
+
+    // }, []);
+
     const barChart1 = {
         series: [{
             name: 'Today',
@@ -110,7 +141,7 @@ export const Compliance = () => {
                             <div className="card-body">
                                 <div className="SortingContainer">
                                     <span>Timeframe:</span>
-                                    <div class="customSelectCompliance">
+                                    <div className="customSelectCompliance">
                                         <select className='complianceSelect'>
                                             <option value="">All-time</option>
                                             <option value="">Single-time</option>
@@ -128,7 +159,7 @@ export const Compliance = () => {
                             <div className="card-body">
                                 <div className="SortingContainer">
                                     <span>People:</span>
-                                    <div class="customSelectCompliance">
+                                    <div className="customSelectCompliance">
                                         <select className='complianceSelect'>
                                             <option value="">All</option>
                                             <option value="">Single</option>
@@ -146,7 +177,7 @@ export const Compliance = () => {
                             <div className="card-body">
                                 <div className="SortingContainer">
                                     <span>Topic:</span>
-                                    <div class="customSelectCompliance">
+                                    <div className="customSelectCompliance">
                                         <select className='complianceSelect'>
                                             <option value="">All</option>
                                             <option value="">Single</option>
