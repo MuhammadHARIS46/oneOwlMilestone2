@@ -76,7 +76,7 @@ const Login = () => {
         });
         navigate(ROUTES.DASHBOARD_AGENT)
 
-        // UserDetail()
+        UserDetail()
       } else {
         enqueueSnackbar("Invalid credentials", {
           variant: "error",
