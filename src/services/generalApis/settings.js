@@ -9,5 +9,8 @@ export const SettingApi = () => {
     const postSetting = (data) => {
         return axiosInstance.post(`${baseUrl}/setting/save`, data);
     }
-    return { postSetting }
+    const getSetting = () =>{
+        return axiosInstance.get(`${baseUrl}/user/setting`)
+    }
+    return { postSetting,getSetting }
 }
