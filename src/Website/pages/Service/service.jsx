@@ -23,7 +23,6 @@ export const Service = () => {
       const response = await getUserConversations();
       setConversationState(response?.data?.data);
       console.log("user convo", response?.data?.data);
-      console.log(conversationState);
     } catch (err) {
       console.log("error", err);
     }
