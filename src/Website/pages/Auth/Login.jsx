@@ -74,7 +74,9 @@ const Login = () => {
           variant: "success",
           autoHideDuration: 2000,
         });
-        UserDetail()
+        navigate(ROUTES.DASHBOARD_AGENT)
+
+        // UserDetail()
       } else {
         enqueueSnackbar("Invalid credentials", {
           variant: "error",

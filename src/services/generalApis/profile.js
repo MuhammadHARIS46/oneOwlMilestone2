@@ -10,7 +10,7 @@ export const generalApi = () => {
         return axiosInstance.put(`${baseUrl}/user`, data);
     }
     const getUserDetail = () =>{
-        return axiosInstance.get(`${baseUrl}/user/me`)
+        return axiosInstance.get('http://54.210.253.228/api/user/me')
     }
 
 
