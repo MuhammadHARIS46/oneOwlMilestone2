@@ -9,7 +9,7 @@ export const Settings = ({ getThemeColor, isDarkMode }) => {
     const { setDarkMode, getDarkMode } = DarkMode();
     const darkMode = getDarkMode();
 
-    const { postSetting } = SettingApi();
+    const { postSetting,getSetting } = SettingApi();
 
     const [getSettingData, setSettingData] = useState({
         pushNotify: false,
@@ -20,6 +20,10 @@ export const Settings = ({ getThemeColor, isDarkMode }) => {
     const getInput = (e) => {
         const { name, checked } = e.target;
         setSettingData({ ...getSettingData, [name]: checked })
+    }
+    const getSettings = async()=>{
+        const response = await getSetting()
+        console.log("response",response)
     }
     useEffect(() => {
 
@@ -38,6 +42,10 @@ export const Settings = ({ getThemeColor, isDarkMode }) => {
             console.log(res, 'error');
         })
     }, [getSettingData])
+useEffect(() => {
+    getSettings()
+}, [])
+
 
     return (
         <React.Fragment>

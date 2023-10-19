@@ -177,7 +177,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
   useEffect(() => {
     getUserDetails();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userDetails]);
+  }, []);
 
   return (
     <React.Fragment>
