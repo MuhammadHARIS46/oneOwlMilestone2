@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import BodyComponent from "../../components/bodyComponent";
 import agentImg from "../../../assets/images/guy.png";
@@ -12,11 +13,10 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 export const Service = () => {
-    // getUserConvoSummary
-  const { getUserConversations } = ServiceApi();
+  const { getUserConversations,getUserConvoSummary } = ServiceApi();
 
   const [conversationState, setConversationState] = useState([]);
-//   const [convoSummaryState, setConvoSummaryState] = useState([]);
+  const [convoSummaryState, setConvoSummaryState] = useState();
 
   const getUserConvo = async () => {
     try {
@@ -28,17 +28,19 @@ export const Service = () => {
     }
   };
 
-//   const getConvoSummary = async () => {
-//     try {
-//       const response = await getUserConvoSummary();
-//       setConvoSummaryState(response?.data?.data);
-//     } catch (err) {
-//       console.log("error", err);
-//     }
-//   };
+  const getConvoSummary = async () => {
+    try {
+      const response = await getUserConvoSummary();
+      console.log("sum",response?.data)
+      setConvoSummaryState(response);
+    } catch (err) {
+      console.log("error", err);
+    }
+  };
 
   useEffect(() => {
     getUserConvo();
+    getConvoSummary()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

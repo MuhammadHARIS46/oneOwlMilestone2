@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useRef, useState, useEffect } from "react";
 import BodyComponent from "../../components/bodyComponent";
 import ProfileImg from "../../../assets/images/guy.png";
@@ -12,6 +13,7 @@ import { SiFacebook } from "react-icons/si";
 import { RiAddLine } from "react-icons/ri";
 import { generalApi } from "../../../services/generalApis/profile";
 
+// eslint-disable-next-line react/prop-types
 export const Profile = ({ getUserNameVal, getUserLastVal }) => {
   const { putUpdateProfile, getUserDetail } = generalApi();
 
@@ -30,13 +32,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
       reader.readAsDataURL(selectedFile);
     }
   };
-  const [userData, setUserData] = useState({
-    firstname:"",
-    lastname:"",
-    email: "",
-    phone: "",
-  });
-
+  
   const [userEmail, setUserEmail] = useState("");
   const [userPhone, setUserPhone] = useState("");
 
@@ -136,8 +132,16 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
   const getSocialVal = (e) => {
     setAddSocialVal({ ...addSocialVal, [e.target.name]: e.target.value });
   };
-
   const [userNum, setUserNum] = useState("");
+
+
+
+  const [userData, setUserData] = useState({
+    firstname:"",
+    lastname:"",
+    email: "",
+    phone: "",
+  });
 
   const [userDetails, setUserDetails] = useState();
   const [edit, setEdit] = useState(false);

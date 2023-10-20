@@ -9,7 +9,7 @@ export const DashboardApi = () =>{
         return axiosInstance.get(`${baseUrl}/user/conversation-rate`);
     }
     const getAvgResponseTime = () =>{
-        return axiosInstance.get(`${baseUrl}/user/average-response-time`)
+        return axiosInstance.get(`${baseUrl}/user/average-time`)
     }
 
     return { getConversationRate, getAvgResponseTime }

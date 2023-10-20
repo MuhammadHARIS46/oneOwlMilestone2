@@ -1,4 +1,6 @@
-import React from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+import React,{useEffect,useState} from 'react'
 import BodyComponent from '../../components/bodyComponent'
 import { BiSolidDownArrow, BiSolidUpArrow } from 'react-icons/bi'
 import ReactApexChart from 'react-apexcharts';
@@ -7,38 +9,37 @@ import ReactApexChart from 'react-apexcharts';
 // MdKeyboardArrowRight bottom
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import agentImg from '../../../assets/images/guy.png'
-// import {ComplianceApi} from "../../../services/agentApis/Compliance"
+import {ComplianceApi} from "../../../services/agentApis/Compliance"
 
 export const Compliance = () => {
 
-    // const { getConversationAnalytics, getUserAgentConvo } = ComplianceApi()
+    const { getConversationAnalytics, getUserAgentConvo } = ComplianceApi()
 
-    // const [analytics,setAnalytics] = useState()
-    // const [convo,setConvo] = useState([])
-    // const getConvoAnalytics = async()=>{
-    //     try{
-    //         const response = await getConversationAnalytics();
-    //         setAnalytics(response?.data?.data)
-    //       }
-    //       catch(err){
-    //         console.log("error",err)
-    //       }
-    // }
-    // const getConvo = async()=>{
-    //     try{
-    //         const response = await getUserAgentConvo();
-    //         setConvo(response?.data?.data)
-    //       }
-    //       catch(err){
-    //         console.log("error",err)
-    //       }
-    // }
+    const [analytics,setAnalytics] = useState([])
+    const [convo,setConvo] = useState([])
+    const getConvoAnalytics = async()=>{
+        try{
+            const response = await getConversationAnalytics();
+            setAnalytics(response?.data?.data)
+          }
+          catch(err){
+            console.log("error",err)
+          }
+    }
+    const getConvo = async()=>{
+        try{
+            const response = await getUserAgentConvo();
+            setConvo(response?.data?.data)
+          }
+          catch(err){
+            console.log("error",err)
+          }
+    }
 
-    // useEffect(() => {
-    //     getConvoAnalytics()
-    //     getConvo()
-
-    // }, []);
+    useEffect(() => {
+        getConvoAnalytics()
+        getConvo()
+    }, []);
 
     const barChart1 = {
         series: [{
