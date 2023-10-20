@@ -1,21 +1,61 @@
-import React, { useState } from 'react';
-import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
-import { BsCash } from 'react-icons/bs'
-import ReactApexChart from 'react-apexcharts';
-
-import { LuUsers } from 'react-icons/lu'
-import { BiBarChartSquare } from 'react-icons/bi'
-import { FaDollarSign } from 'react-icons/fa'
-import BodyComponent from '../../components/bodyComponent';
-import StatsBar from '../../components/stats';
-import { useContext } from 'react';
-import { ThemeContext } from '../../../services/contextFile';
-
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from "react";
+import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
+import { BsCash } from "react-icons/bs";
+import ReactApexChart from "react-apexcharts";
+import { LuUsers } from "react-icons/lu";
+import { BiBarChartSquare } from "react-icons/bi";
+import { FaDollarSign } from "react-icons/fa";
+import BodyComponent from "../../components/bodyComponent";
+import StatsBar from "../../components/stats";
+import { useContext } from "react";
+import { ThemeContext } from "../../../services/contextFile";
+import { DashboardApi } from "../../../services/customerApis/dashboard";
 export const Dashboard = () => {
+  const { getConversationRate, getConversationCount, getAvgWaitingTime } =
+    DashboardApi();
+  const [convoRate, setConvoRate] = useState();
+  const [convoCount, setConvoCount] = useState([]);
+  const [waitTime, setWaitTime] = useState([]);
 
+  const getConvoRate = async () => {
+    try {
+      const response = await getConversationRate();
+      setConvoRate(response.data.data);
+      // console.log(response.data.data);
+    } catch (err) {
+      console.log("error", err);
+    }
+  };
+
+  const getConvoCount = async () => {
+    try {
+      const response = await getConversationCount();
+      setConvoCount(response.data.data);
+      // console.log(response.data.data);
+    } catch (err) {
+      console.log("error", err);
+    }
+  };
+  const getAvgWaitTime = async () => {
+    try {
+      const response = await getAvgWaitingTime();
+      setWaitTime(response.data.data);
+      // console.log(response.data.data);
+    } catch (err) {
+      console.log("error", err);
+    }
+  };
+
+  useEffect(() => {
+    getConvoRate();
+    getConvoCount();
+    getAvgWaitTime();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const LineChart = {
     chart: {
-      type: 'line',
+      type: "line",
       toolbar: {
         show: true,
         tools: {
@@ -29,29 +69,29 @@ export const Dashboard = () => {
         stroke: 1,
       },
     },
-    colors: ['#E0712F', '#9A8053', '#71589F'],
+    colors: ["#E0712F", "#9A8053", "#71589F"],
     series: [
       {
-        name: 'Today',
+        name: "Today",
         data: [0, 2, 4, 5, 6, 7],
         strokeWidth: 1,
       },
       {
-        name: 'Yesterday',
+        name: "Yesterday",
         data: [0, 3, 8, 2, 1, 7],
       },
       {
-        name: 'Same Day Last Week',
+        name: "Same Day Last Week",
         data: [0, 1, 4, 3, 7, 0],
       },
     ],
     xaxis: {
-      categories: ['0', '1', '2', '3', '4', '5'],
+      categories: ["0", "1", "2", "3", "4", "5"],
     },
     yaxis: {
       axisBorder: {
         show: true,
-        color: '#e0e0e0',
+        color: "#e0e0e0",
         width: 1,
         offsetX: 0,
         offsetY: 0,
@@ -60,7 +100,7 @@ export const Dashboard = () => {
   };
   const LineChart1 = {
     chart: {
-      type: 'line',
+      type: "line",
       toolbar: {
         show: true,
         tools: {
@@ -74,29 +114,29 @@ export const Dashboard = () => {
         stroke: 1,
       },
     },
-    colors: ['#E0712F', '#9A8053', '#71589F'],
+    colors: ["#E0712F", "#9A8053", "#71589F"],
     series: [
       {
-        name: 'Facebook',
+        name: "Facebook",
         data: [0, 2, 4, 5, 6, 6],
         strokeWidth: 1,
       },
       {
-        name: 'Live Chat',
+        name: "Live Chat",
         data: [0, 3, 7, 2, 3, 6],
       },
       {
-        name: 'SMS',
+        name: "SMS",
         data: [0, 1, 4, 3, 7, 3],
       },
     ],
     xaxis: {
-      categories: ['0', '1', '2', '3', '4', '5'],
+      categories: ["0", "1", "2", "3", "4", "5"],
     },
     yaxis: {
       axisBorder: {
         show: true,
-        color: '#e0e0e0',
+        color: "#e0e0e0",
         width: 1,
         offsetX: 0,
         offsetY: 0,
@@ -106,9 +146,9 @@ export const Dashboard = () => {
 
   const chartOptions = {
     series: [100, 55, 20],
-    labels: ['Social Media', 'Voice/SMS', 'Live Chats'],
+    labels: ["Social Media", "Voice/SMS", "Live Chats"],
     chart: {
-      type: 'donut',
+      type: "donut",
       toolbar: {
         show: true,
         tools: {
@@ -116,9 +156,9 @@ export const Dashboard = () => {
         },
       },
     },
-    colors: ['#4050B5', '#FB8C00', '#E53835'],
+    colors: ["#4050B5", "#FB8C00", "#E53835"],
     legend: {
-      position: 'bottom'
+      position: "bottom",
     },
     responsive: [
       {
@@ -132,7 +172,7 @@ export const Dashboard = () => {
     ],
   };
 
-  const darkMode = useContext(ThemeContext)
+  const darkMode = useContext(ThemeContext);
 
   return (
     <React.Fragment>
@@ -148,7 +188,12 @@ export const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <ReactApexChart options={LineChart} series={LineChart.series} type="line" height={350} />
+              <ReactApexChart
+                options={LineChart}
+                series={LineChart.series}
+                type="line"
+                height={350}
+              />
             </div>
           </div>
 
@@ -161,7 +206,12 @@ export const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <ReactApexChart options={LineChart1} series={LineChart1.series} type="line" height={350} />
+              <ReactApexChart
+                options={LineChart1}
+                series={LineChart1.series}
+                type="line"
+                height={350}
+              />
             </div>
           </div>
           <div className="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 ">
@@ -173,7 +223,12 @@ export const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <ReactApexChart options={chartOptions} series={chartOptions.series} type="donut" height={300} />
+              <ReactApexChart
+                options={chartOptions}
+                series={chartOptions.series}
+                type="donut"
+                height={300}
+              />
             </div>
           </div>
           <div className="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-7 ">
@@ -184,10 +239,7 @@ export const Dashboard = () => {
                     <div className="statsRow">
                       <div className="statsColumn statCol">
                         <span>BUDGET</span>
-                        <h6>
-                          $24k
-                        </h6>
-
+                        <h6>$24k</h6>
                       </div>
                       <div className="statsColumn">
                         <div className="columnIcon redBackground">
@@ -195,10 +247,9 @@ export const Dashboard = () => {
                         </div>
                       </div>
                     </div>
-                    <p className='redArrow'>
-                      <AiOutlineArrowDown />  12% <span>Since Last month</span>
+                    <p className="redArrow">
+                      <AiOutlineArrowDown /> 12% <span>Since Last month</span>
                     </p>
-
                   </div>
                 </div>
               </div>
@@ -208,9 +259,7 @@ export const Dashboard = () => {
                     <div className="statsRow">
                       <div className="statsColumn statCol">
                         <span>TOTAL CUSTOMERS</span>
-                        <h6>
-                          $1,6k
-                        </h6>
+                        <h6>$1,6k</h6>
                       </div>
                       <div className="statsColumn">
                         <div className="columnIcon greenBackground">
@@ -218,8 +267,8 @@ export const Dashboard = () => {
                         </div>
                       </div>
                     </div>
-                    <p className='greenArrow'>
-                      <AiOutlineArrowUp />  16% <span>Since Last month</span>
+                    <p className="greenArrow">
+                      <AiOutlineArrowUp /> 16% <span>Since Last month</span>
                     </p>
                   </div>
                 </div>
@@ -232,9 +281,7 @@ export const Dashboard = () => {
                     <div className="statsRow">
                       <div className="statsColumn statCol">
                         <span>TASKS PROGRESS</span>
-                        <h6>
-                          75.5%
-                        </h6>
+                        <h6>75.5%</h6>
                       </div>
                       <div className="statsColumn">
                         <div className="columnIcon yellowBackground">
@@ -242,8 +289,7 @@ export const Dashboard = () => {
                         </div>
                       </div>
                     </div>
-                    <progress className='purpleBar' value="32" max="100" />
-
+                    <progress className="purpleBar" value="32" max="100" />
                   </div>
                 </div>
               </div>
@@ -253,9 +299,7 @@ export const Dashboard = () => {
                     <div className="statsRow ">
                       <div className="statsColumn statCol">
                         <span>Total Profile</span>
-                        <h6>
-                          $24k
-                        </h6>
+                        <h6>$24k</h6>
                       </div>
                       <div className="statsColumn">
                         <div className="columnIcon purpleBackground">
@@ -263,8 +307,7 @@ export const Dashboard = () => {
                         </div>
                       </div>
                     </div>
-                    <progress className='purpleBarProf' value="32" max="100" />
-
+                    <progress className="purpleBarProf" value="32" max="100" />
                   </div>
                 </div>
               </div>
@@ -272,8 +315,6 @@ export const Dashboard = () => {
           </div>
         </div>
       </BodyComponent>
-
-
     </React.Fragment>
-  )
-}
+  );
+};
