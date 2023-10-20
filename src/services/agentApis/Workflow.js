@@ -8,6 +8,9 @@ export const WorkflowApi = () =>{
     const getSchedule = () => {
         return axiosInstance.get(`${baseUrl}/schedule`);
     }
+    const createSchedule = (data) =>{
+        return axiosInstance.post(`${baseUrl}/schedule`,data)
+    }
 
-    return { getSchedule }
+    return { getSchedule,createSchedule }
 }

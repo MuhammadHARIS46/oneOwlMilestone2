@@ -10,7 +10,7 @@ export const ServiceApi = () => {
         return axiosInstance.get(`${baseUrl}/user/conversations?channel=all`);
     }
     const getUserConvoSummary = () => {
-        return axiosInstance.get(`${baseUrl}/conversation/summary/me`);
+        return axiosInstance.get(`${baseUrl}/conversation/summary`);
     }
     return { getUserConvoSummary, getUserConversations }
 }

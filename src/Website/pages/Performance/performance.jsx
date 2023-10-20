@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+/* eslint-disable no-unused-vars */
+import React, { useState,useEffect } from 'react'
 import BodyComponent from '../../components/bodyComponent'
 import AgentImg from '../../../assets/images/guy.png'
 import ReactApexChart from 'react-apexcharts';
@@ -8,22 +9,24 @@ import ReactPaginate from 'react-paginate';
 import starImg from '../../../assets/images/plusSign.svg'
 import { AiFillStar } from 'react-icons/ai';
 import { MdKeyboardArrowRight } from 'react-icons/md';
-// import { PerformanceApi } from '../../../services/agentApis/Performance';
+import { PerformanceApi } from '../../../services/agentApis/Performance';
 export const Performance = () => {
-    // const { getReview } = PerformanceApi()
+    const { getReview } = PerformanceApi()
 
-    // const [review,setReview] = useState([])
-    // const getReviews = async()=>{
-    //     try {
-    //         const response = await getUserConversations();
-    //         setReview(response?.data?.data);
-    //       } catch (err) {
-    //         console.log("error", err);
-    //       }
-    // }
-    // useEffect(() => {
-    //     getReviews()
-    // }, [])
+    const [review,setReview] = useState([])
+    const getReviews = async()=>{
+        try {
+            const response = await getReview();
+            setReview(response?.data?.data);
+            console.log(response.data.data)
+          } catch (err) {
+            console.log("error", err);
+          }
+    }
+    useEffect(() => {
+        getReviews()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     const barChart = {
         series: [{
             name: 'Today',
@@ -173,7 +176,7 @@ export const Performance = () => {
 
     const handleDelete = (id) => {
         const updatedData = data.filter((item) => item.id !== id);
-        setData(updatedData);
+        // setData(updatedData);
     };
 
     return (
