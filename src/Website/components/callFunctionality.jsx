@@ -5,14 +5,8 @@ import agentImg from '../../assets/images/guy.png'
 import { BsTelephoneFill } from 'react-icons/bs'
 import { PiPaperPlaneTiltBold } from 'react-icons/pi'
 import { FaVideo } from 'react-icons/fa'
-// import { AiOutlineClose } from 'react-icons/ai'
-// import Center from '../../components/Center'
-
-
-
 import { Button, Drawer, Row, Spin } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
-// const { TextArea } = Input
 
 JsSIP.debug.enable('JsSIP:*')
 
@@ -82,13 +76,14 @@ export const CallFunctionality = () => {
 
     useEffect(() => {
         const user = localStorage.getItem('extension')
+        const senderExtension=localStorage.getItem("senderExtension")
         setUser(user)
         const password = localStorage.getItem('password')
         const configuration = {
-            display_name: user,
-            authorization_user: user,
+            display_name: senderExtension,
+            authorization_user: senderExtension,
             sockets: [socket],
-            uri: 'sip:' + user + '@' + server + ':5066',
+            uri: 'sip:' + senderExtension + '@' + server + ':5066',
             password: password,
             register_expires: 180,
             session_timers: false,
@@ -173,7 +168,7 @@ export const CallFunctionality = () => {
     const isOpen = useMemo(() => callStatus > 0, [callStatus])
 
     const makeCall = async () => {
-        if (!phoneNumber) {
+        if (!user) {
             alert('set phone number!')
             return
         }
@@ -183,7 +178,7 @@ export const CallFunctionality = () => {
             ? [true, true]
             : [true, false]
         phone.call(
-            `sip:${phoneNumber}@34.236.189.205:5066`,
+            `sip:${user}@34.236.189.205:5066`,
             outBountOptions(...callParams)
         )
     }
@@ -262,22 +257,6 @@ export const CallFunctionality = () => {
                     </button>
                 </div>
             </div>
-
-            {/* <dialog className='callDialogBoxOuter modalLogout' open>
-                <div className="callDialogBox modalLogoutMain">
-                    <button className='modalLogoutButton' >
-                        <AiOutlineClose />
-                    </button>
-
-
-
-                    
-                    <div className="logoutButtons">
-                        <button className='yesButton' >Accept</button>
-                        <button className='NoButton' >Decline</button>
-                    </div>
-                </div>
-            </dialog> */}
 
 
             <Drawer

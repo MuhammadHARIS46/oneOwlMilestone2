@@ -65,7 +65,9 @@ const Communication = () => {
                 <ul className="agentList">
                   {allAgent?.map((item) => (
                     <li key={item.id}>
-                      <button onClick={() => setSelectedAgent(item.agentName)}>
+                      <button onClick={() => {
+                        localStorage.setItem("extension",item.extension)
+                      }}>
                         <img src={ProfileImg} alt="" />
                         <p
                           style={{
