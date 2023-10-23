@@ -28,6 +28,8 @@ const Login = () => {
       }
       })
       localStorage.setItem("role",response.data.role)
+      localStorage.setItem("senderExtension",response.data.extension)
+      console.log("user",response.data)
       if(response.data.role==="agent"){
         navigate(ROUTES.DASHBOARD_AGENT)
       }
@@ -70,6 +72,7 @@ const Login = () => {
 
       if (data.idToken) {
         TokenService().updateToken(data.idToken);
+        localStorage.setItem("password",password)
         enqueueSnackbar("Logged in successfully", {
           variant: "success",
           autoHideDuration: 2000,

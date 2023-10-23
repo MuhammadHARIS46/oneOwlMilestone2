@@ -12,6 +12,8 @@ export const Footer = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("role")
+    localStorage.removeItem("password")
+
   };
   return (
     <footer className="footer2">
