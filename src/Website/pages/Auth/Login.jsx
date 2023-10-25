@@ -3,9 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { useSnackbar } from "notistack";
 import TokenService from "../../../services/tokenService";
-import Logo from "../../../assets/images/Logo.svg";
-import Google from "../../../assets/images/google 1.svg";
-import Facebook from "../../../assets/images/facebook 1.svg";
+import Logo from "../../../assets/images/Untitled-2.png";
 import "./styles.css";
 import Form from "react-bootstrap/Form";
 import thumbsUp from "../../../assets/images/thumbsUp.svg";
@@ -104,7 +102,9 @@ const Login = () => {
       <div className="mainBox">
         <div className="leftContainer">
           <div className="logoBox">
-            <img src={Logo} alt="owl" />
+            <img src={Logo} alt="owl" style={{
+              width:"300px"
+            }} />
           </div>
           <h2
             style={{
@@ -120,43 +120,8 @@ const Login = () => {
           >
             Login to your account
           </p>
-          <div className="fbGoogleBtnWrap">
-            <button className="iconBtn">
-              <img src={Google} alt="Facebook" />
-              <p
-                style={{
-                  marginBottom: 0,
-                }}
-              >
-                Google
-              </p>
-            </button>
-            <button className="iconBtn">
-              <img src={Facebook} alt="Facebook" />
-              <p
-                style={{
-                  marginBottom: 0,
-                }}
-              >
-                Facebook
-              </p>
-            </button>
-          </div>
-          <div className="continueWith">
-            <div
-              style={{
-                strokeWidth: "1px",
-                stroke: "#DBDBDB",
-              }}
-            ></div>
-            <p>or continue with</p>
-            <div
-              style={{
-                strokeWidth: "1px",
-                stroke: "#DBDBDB",
-              }}
-            ></div>
-          </div>
+
+
           <form onSubmit={handleSubmit} className="formBox">
             <input
               type="email"
@@ -195,7 +160,7 @@ const Login = () => {
             <button type="submit" className="loginBtn">
               Login
             </button>
-            <div className="noAccBox">
+            {/* <div className="noAccBox">
               Do not have an account?{" "}
               <span>
                 <Link
@@ -214,7 +179,7 @@ const Login = () => {
                   </p>
                 </Link>
               </span>
-            </div>
+            </div> */}
           </form>
         </div>
         <div className="rightContainer">
