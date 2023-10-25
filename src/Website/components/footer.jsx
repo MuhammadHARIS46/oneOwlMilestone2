@@ -13,6 +13,10 @@ export const Footer = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("role")
     localStorage.removeItem("password")
+    localStorage.removeItem("senderExtension")
+    localStorage.removeItem("id")
+
+
 
   };
   return (

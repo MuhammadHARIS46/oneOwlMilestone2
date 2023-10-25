@@ -67,6 +67,7 @@ const Communication = () => {
                     <li key={item.id}>
                       <button onClick={() => {
                         localStorage.setItem("extension",item.extension)
+                        localStorage.setItem("id",item.id)
                       }}>
                         <img src={ProfileImg} alt="" />
                         <p

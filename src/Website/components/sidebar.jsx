@@ -67,7 +67,9 @@ export const Sidebar = () => {
     setIsLogoutModalOpen(false);
     localStorage.removeItem("token");
     localStorage.removeItem("role");
-    localStorage.removeItem("password")
+    localStorage.removeItem("password");
+    localStorage.removeItem("senderExtension");
+    localStorage.removeItem("id");
     navigate(ROUTES.LOGIN);
   };
   const role = localStorage.getItem("role");

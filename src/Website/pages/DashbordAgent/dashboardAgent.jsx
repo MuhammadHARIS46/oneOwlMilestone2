@@ -338,7 +338,7 @@ export const DashboardAgent = () => {
               <div className="card-body">
                 <div className="chart">
                   <div className="chartHeading2">
-                    <p className='chartHeading2InnerFirst'>Order Time</p>
+                    <p className='chartHeading2InnerFirst'>Average Handle Time by Agent</p>
                     <p className='chartHeading2InnerThird'> From 1-6 Dec, 2020</p>
                   </div>
 
