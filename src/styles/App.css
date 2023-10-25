@@ -100,7 +100,7 @@ a {
   font-size: 22px;
 }
 .agentNamePrivacy span {
-  color: #0B2360;
+  color: black;
   text-align: right;
   font-size: 40px;
 }
@@ -340,8 +340,8 @@ a {
   color: #aa97b0;
 }
 .sideBarInner .sidebar-nav .nav-item .active {
-  /* background-color: #0B2360; */
-  background-color: #0B2360
+  /* background-color: #0B2360 */
+  background-color: black;
 }
 .sideBarInner .sidebar-nav .nav-item .active .sideIcon {
   color: white;
@@ -370,6 +370,7 @@ header .headerInner {
   width: 100%;
   position: fixed;
   z-index: 13;
+  background:black
 }
 header .headerInner .logoImage img {
   width: 80px;
@@ -424,7 +425,8 @@ header .headerInner .navRight .aboutDoctor p {
   margin: 0;
 }
 header .headerInner .navRight .aboutDoctor .doctorName {
-  color: #0B2360;
+  /* color: #0B2360; */
+  color:white;
   font-weight: 600;
 }
 header .headerInner .navRight .aboutDoctor .doctorSpeciality {
@@ -480,7 +482,7 @@ header .headerInner .menuButton svg {
   line-height: 18px;
   color: white;
   padding: 6px 16px;
-  background-color: #0B2360;
+  background-color: black;
   border: 1px solid white;
   border-radius: 5px;
   transition: all 0.1 ease-in;
@@ -589,9 +591,9 @@ header .headerInner .menuButton svg {
   font-size: 14px;
   display: inline-block;
   line-height: 18px;
-  color: #0B2360;
+  color: black;
   padding: 6px 16px;
-  border: 1px solid #0B2360;
+  border: 1px solid black;
   border-radius: 5px;
   transition: all 0.1 ease-in;
 }
@@ -605,7 +607,7 @@ header .headerInner .menuButton svg {
   line-height: 18px;
   color: white;
   padding: 6px 16px;
-  background-color: #0B2360;
+  background-color: black;
   border: 1px solid white;
   border-radius: 5px;
   transition: all 0.1 ease-in;
@@ -682,7 +684,8 @@ header .headerInner .menuButton svg {
   width: 100%;
 }
 .mainSection .formField button {
-  background-color: #0B2360;
+  /* background-color: #0B2360; */
+  background-color: black;
   border: none;
   color: white;
   transition: all 0.1 ease-in;
@@ -765,14 +768,16 @@ header .headerInner .menuButton svg {
   line-height: 17px;
   cursor: pointer;
   border: none;
-  color: #0B2360;
+  /* color: #0B2360; */
+  color: black;
 }
 .mainSection .addFields .addfieldButton svg {
   margin-bottom: 2px;
   margin-right: 10px;
 }
 .mainSection .profileCustomer {
-  color: #0B2360;
+  /* color: #0B2360; */
+  color: black;
   font-size: 40px;
   font-weight:700
 }
@@ -839,7 +844,7 @@ header .headerInner .menuButton svg {
   justify-content: center;
 }
 .mainSection .pagination .active {
-  background-color: #0B2360;
+  background-color: black;
   color: white;
 }
 .mainSection .pagination .previous a,
@@ -886,7 +891,8 @@ header .headerInner .menuButton svg {
   flex-wrap: wrap;
 }
 .mainSection .headingMainCon h3 {
-  color: #0B2360;
+  /* color: #0B2360; */
+  color:black;
   font-size: 44px;
   margin: 0;
   padding: 0;
@@ -895,9 +901,9 @@ header .headerInner .menuButton svg {
   font-size: 18px;
   display: inline-block;
   height: 40px;
-  color: #0B2360;
+  color: black;
   padding: 6px 16px;
-  border: 1px solid #0B2360;
+  border: 1px solid black;
   border-radius: 5px;
 }
 .mainSection .settingsListComp {
@@ -945,11 +951,11 @@ header .headerInner .menuButton svg {
   transition: 0.4s;
 }
 .mainSection .mainListComp .mainHeadingWrapper input:checked + .slider {
-  background-color: #0B2360;
+  background-color: black;
   border: 3px solid transparent;
 }
 .mainSection .mainListComp .mainHeadingWrapper input:focus + .slider {
-  box-shadow: 0 0 1px #0B2360;
+  box-shadow: 0 0 1px black;
 }
 .mainSection .mainListComp .mainHeadingWrapper input:checked + .slider:before {
   background-color: white;
@@ -966,7 +972,7 @@ header .headerInner .menuButton svg {
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
-  color: #0B2360;
+  color: black;
 }
 .mainSection .mainListHeading h6 {
   margin: 0;
@@ -985,9 +991,9 @@ header .headerInner .menuButton svg {
   font-size: 14px;
   display: inline-block;
   line-height: 18px;
-  color: #0B2360;
+  color: black;
   padding: 6px 16px;
-  border: 1px solid #0B2360;
+  border: 1px solid black;
   border-radius: 5px;
   transition: all 0.1 ease-in;
 }
@@ -1001,7 +1007,8 @@ header .headerInner .menuButton svg {
   line-height: 18px;
   color: white;
   padding: 6px 16px;
-  background-color: #0B2360;
+  /* background-color: #0B2360; */
+  background-color: black;
   border: 1px solid white;
   border-radius: 5px;
   transition: all 0.1 ease-in;
@@ -1019,7 +1026,8 @@ header .headerInner .menuButton svg {
   gap: 10px;
 }
 .mainSection .rightSidePrivacyCol .rightSidePrivacyCoLbutton {
-  background-color: #0B2360;
+  /* background-color: #0B2360; */
+  background-color: black;
   border: none;
   color: white;
   transition: all 0.1 ease-in;
@@ -1040,7 +1048,8 @@ header .headerInner .menuButton svg {
   justify-content: space-between;
 }
 .mainSection .billingTotal .bottomBilling button {
-  background-color: #0B2360;
+  /* background-color: #0B2360; */
+  background-color: black;
   border: none;
   color: white;
   transition: all 0.1 ease-in;
@@ -1121,7 +1130,8 @@ header .headerInner .menuButton svg {
   font-size: 13px;
 }
 .mainSection .mainSectionInner .billingMain .billBtnGr input[type=radio]:checked + label {
-  background-color: #0B2360;
+  /* background-color: #0B2360; */
+  background-color: black;
   color: white;
   border-radius: 50px;
 }
@@ -1157,7 +1167,8 @@ header .headerInner .menuButton svg {
   margin: 0;
 }
 .mainSection .mainSectionInner .BillingTable tbody tr td .billingIconTable {
-  background-color: #0B2360;
+  /* background-color: #0B2360; */
+  background-color: black;
   padding: 7px;
   border-radius: 50%;
   display: inline-block;
@@ -1236,7 +1247,8 @@ header .headerInner .menuButton svg {
   height: 50px;
   padding-left: 20px;
   vertical-align: middle;
-  background-color: #0B2360;
+  /* background-color: #0B2360; */
+  background-color: black;
   color: white;
   font-size: 12px;
   font-style: normal;
@@ -1368,7 +1380,8 @@ header .headerInner .menuButton svg {
      object-fit: contain;
 }
 .mainSection .mainSectionInner .allNotificationCard .notify svg {
-  background-color: #0B2360;
+  /* background-color: #0B2360; */
+  background-color: black;
   color: white;
   height: 30px;
   padding: 5px;
@@ -1423,7 +1436,8 @@ header .headerInner .menuButton svg {
 .mainSection .mainSectionInner .agentList li p {
   margin: 0;
   padding: 0;
-  color: #0B2360;
+  /* color: #0B2360; */
+  color:black;
   font-size: 12px;
 }
 .mainSection .mainSectionInner .headingNotification {
@@ -1599,7 +1613,8 @@ header .headerInner .menuButton svg {
   height: 50px;
   padding-left: 20px;
   vertical-align: middle;
-  background-color: #0B2360;
+  /* background-color: #0B2360; */
+  background-color: black;
   color: white;
   font-size: 12px;
   font-style: normal;
@@ -1626,7 +1641,8 @@ header .headerInner .menuButton svg {
   border: none;
 }
 .mainSection .mainSectionInner .CommunicationComponent .communicationChat .sendChatButton {
-  background-color: #0B2360;
+  /* background-color: #0B2360; */
+  background-color: black;
   border: none;
   color: white;
   padding: 0px 15px 5px 15px;
@@ -1646,7 +1662,8 @@ header .headerInner .menuButton svg {
 }
 .mainSection .mainSectionInner .CommunicationComponent .communicationHeader {
   height: 50px;
-  background-color: #0B2360;
+  /* background-color: #0B2360; */
+  background-color:black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1729,7 +1746,8 @@ header .headerInner .menuButton svg {
   text-align: center;
 }
 .mainSection .mainSectionInner .chartHeading1 p {
-  color: #0B2360;
+  /* color: #0B2360; */
+  color:black;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -1756,7 +1774,8 @@ header .headerInner .menuButton svg {
 }
 .mainSection .mainSectionInner .box1 p {
   margin: 0;
-  color: #0B2360;
+  /* color: #0B2360; */
+  color:black;
   font-size: 32px;
   font-style: normal;
   font-weight: 500;
@@ -1767,7 +1786,7 @@ header .headerInner .menuButton svg {
   margin-top: 30px;
 }
 .footer2 .footer {
-  background-color: #0B2360;
+  background-color: black;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -1968,10 +1987,11 @@ header .headerInner .menuButton svg {
 .chartHeading2 .chartHeading2InnerFirst {
   font-size: 14px;
   margin-bottom: 8px;
+  font-weight: 700;
 }
 .chartHeading2 .chartHeading2InnerSecond {
   font-size: 20px;
-  font-weight: 500px;
+  font-weight: 500;
 }
 .chartHeading2 .chartHeading2InnerFourth {
   color: #262A41;
@@ -2011,7 +2031,7 @@ header .headerInner .menuButton svg {
 }
 .AgentApp .performanceTotalVisits .performanceSingleVisit .leftSide svg {
   font-size: 30px;
-  background-color: #0B2360;
+  background-color: black;
   padding: 5px;
   border-radius: 50%;
   color: white;
@@ -2153,7 +2173,7 @@ header .headerInner .menuButton svg {
   border: none;
   gap: 5px;
   background-color: transparent;
-  color: #0B2360;
+  color: black;
 }
 .AgentApp .addChannelIcon button svg {
   font-size: 36px;
@@ -2246,7 +2266,7 @@ header .headerInner .menuButton svg {
   margin-top: 40px;
   padding: 10px 0 10px 0;
   border-top: 1px solid rgb(201, 201, 201);
-  color: #0B2360;
+  color: black;
   font-weight: 600;
 }
 .AgentApp .complianceeReview .complianceHeading {
@@ -2341,7 +2361,7 @@ header .headerInner .menuButton svg {
   transition: 0.4s;
 }
 .AgentApp .checkBoxSlider input:checked + .slider {
-  background-color: #0B2360;
+  background-color: black;
   border: 3px solid transparent;
 }
 .AgentApp .checkBoxSlider input:focus + .slider {
@@ -2364,7 +2384,7 @@ header .headerInner .menuButton svg {
   border: 1px solid white;
 }
 .AgentApp .workflowTable .workFlowButtonTheme {
-  background-color: #0B2360;
+  background-color: black;
   border: none;
   color: white;
   transition: all 0.1 ease-in;
@@ -2405,7 +2425,8 @@ header .headerInner .menuButton svg {
   font-weight: 400;
 }
 .AgentApp .workflowStats .textStats .valuePara {
-  color: #1B2559;
+  /* color: #1B2559; */
+  color: black;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;

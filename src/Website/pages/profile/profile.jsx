@@ -357,7 +357,8 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                       style={{
                         width: "140.758px",
                         height: "35.311px",
-                        backgroundColor: "#0B2360",
+                        // backgroundColor: "#0B2360",
+                        backgroundColor:"black",
                         border: "none",
                         color: "white",
                         transition: "all 0.1 ease-in",
