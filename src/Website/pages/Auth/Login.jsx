@@ -160,7 +160,7 @@ const Login = () => {
             <button type="submit" className="loginBtn">
               Login
             </button>
-            <div className="noAccBox">
+            {/* <div className="noAccBox">
               Do not have an account?{" "}
               <span>
                 <Link
@@ -179,7 +179,7 @@ const Login = () => {
                   </p>
                 </Link>
               </span>
-            </div>
+            </div> */}
           </form>
         </div>
         <div className="rightContainer">

@@ -171,7 +171,7 @@ const Signup = () => {
             <button type="submit" className="signUpBtn">
               Create Account
             </button>
-            <div className="noAccBox">
+            {/* <div className="noAccBox">
               have an account?{" "}
               <span>
                 <Link
@@ -190,7 +190,7 @@ const Signup = () => {
                   </p>
                 </Link>
               </span>
-            </div>
+            </div> */}
             <p className="termOfUse">
               By continuing you indicate that you read and agreed to the Terms
               of Use
