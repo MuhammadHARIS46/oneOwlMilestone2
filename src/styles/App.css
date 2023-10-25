@@ -435,8 +435,8 @@ header .headerInner .navRight .aboutDoctor .doctorSpeciality {
 header .headerInner .menuButton {
   background-color: rgba(170, 151, 176, 0);
   outline: none;
-  color: #0B2360;
-  border: 3px solid #0B2360;
+  color: white;
+  border: 3px solid white;
   border-radius: 8px;
 }
 header .headerInner .menuButton svg {

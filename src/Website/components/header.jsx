@@ -10,7 +10,7 @@ import {  useNavigate } from "react-router-dom";
 // import { RxCross1 } from "react-icons/rx";
 import { CgMenuLeft } from "react-icons/cg";
 import { ROUTES } from "../../../utils/routes";
-import logoImg from "../../assets/images/logo/logo.png";
+import logoImg from "../../assets/images/official_logo.png";
 import SearchBar from "./searchBar";
 // import AuthService from '../../----services/auth.service';
 import { generalApi } from "../../services/generalApis/profile";

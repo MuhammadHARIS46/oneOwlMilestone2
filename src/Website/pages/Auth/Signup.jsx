@@ -3,9 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { useSnackbar } from "notistack";
 import "./styles.css";
-import Logo from "../../../assets/images/Logo.svg";
-import Google from "../../../assets/images/google 1.svg";
-import Facebook from "../../../assets/images/facebook 1.svg";
+import Logo from "../../../assets/images/Untitled-2.png";
+
 import Scope from "../../../assets/images/Scope.svg";
 import ChannelExp from "../../../assets/images/ChannelExp.svg";
 import TokenService from "../../../services/tokenService";
@@ -115,43 +114,7 @@ const Signup = () => {
           >
             Getting started is easy
           </p>
-          <div className="fbGoogleBtnWrap">
-            <button className="iconBtn">
-              <img src={Google} alt="Facebook" />
-              <p
-                style={{
-                  marginBottom: 0,
-                }}
-              >
-                Google
-              </p>
-            </button>
-            <button className="iconBtn">
-              <img src={Facebook} alt="Facebook" />
-              <p
-                style={{
-                  marginBottom: 0,
-                }}
-              >
-                Facebook
-              </p>
-            </button>
-          </div>
-          <div className="continueWith">
-            <div
-              style={{
-                strokeWidth: "1px",
-                stroke: "#DBDBDB",
-              }}
-            ></div>
-            <p>or continue with</p>
-            <div
-              style={{
-                strokeWidth: "1px",
-                stroke: "#DBDBDB",
-              }}
-            ></div>
-          </div>
+
           <form onSubmit={handleSubmit} className="formBox">
             <input
               // type="email"
