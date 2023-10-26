@@ -62,7 +62,7 @@
 }
 .signUpBtn {
   border-radius: 5px;
-  background-color: #F1C46D;
+  background-color: #f1c46d;
   width: -webkit-fill-available;
   color: black;
   font-size: 14.85px;
@@ -161,6 +161,20 @@
 .recoverPass {
   color: #d93f21;
 }
+.managementInputs {
+  width: 60%;
+  height: 45px;
+  border-radius: 10px;
+}
+.inviteeButn{
+  background: black;
+  color: white;
+  border-radius: 10px;
+  width: 90px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
 @media screen and (max-width: 860px) {
   .mainBox {
     flex-direction: column;
@@ -205,6 +219,9 @@
     bottom: -310px;
     left: 110px;
   }
+  .managementInputs {
+    width: 80%;
+  }
 }
 @media screen and (max-width: 600px) {
   .topNotchpara {
@@ -229,5 +246,8 @@
     bottom: -335px;
     left: 130px;
     width: 250px;
+  }
+  .managementInputs {
+    width: 90%;
   }
 }

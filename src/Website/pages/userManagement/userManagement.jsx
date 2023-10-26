@@ -8,14 +8,21 @@ import { UserApi } from "../../../services/adminApis/User";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { AiOutlineClose } from "react-icons/ai";
+import "../Auth/styles.css";
 export const UserManagement = () => {
-  const { getAllUsers } = UserApi();
+  const { getAllUsers, sendCompanyInvite } = UserApi();
 
   const [currentPage, setCurrentPage] = useState(0);
   const perPage = 6;
   const [allUsers, setAllUsers] = useState([]);
   const [editModal, setEditModal] = useState(false);
   const [deleteDialogue, setDeleteDialogue] = useState(false);
+  const [inviteModal, setInviteModal] = useState(false);
+  const [data, setData] = useState({
+    invitee: "",
+    type: "",
+    name: "",
+  });
   const handlePageChange = (selectedPage) => {
     setCurrentPage(selectedPage.selected);
   };
@@ -37,6 +44,12 @@ export const UserManagement = () => {
   const handleCloseEditModal = () => {
     setEditModal(false);
   };
+  const openInviteModal = () => {
+    setInviteModal(true);
+  };
+  const handleCloseInviteModal = () => {
+    setInviteModal(false);
+  };
   const getAllUser = async () => {
     try {
       const response = await getAllUsers();
@@ -49,13 +62,35 @@ export const UserManagement = () => {
     getAllUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const onChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
 
+  const sendInvite = async () => {
+    setInviteModal(false);
+    console.log(data);
+    try {
+      const response = await sendCompanyInvite(data);
+      console.log("response", response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <React.Fragment>
       <BodyComponent>
         <div className="row g-3">
           <div className="col-12">
             <h2 className="cardMainHeading">User Management</h2>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "flex-end",
+                justifyContent: "flex-end",
+              }}
+            >
+              <button onClick={openInviteModal} className="inviteeButn">Invite</button>
+            </div>
             <div className="communicationTable privacyTable">
               <div className="table-responsive privacyPagination">
                 <table className="table table-hover">
@@ -163,7 +198,65 @@ export const UserManagement = () => {
           </Modal.Footer>
         </Modal>
       )}
-
+      {inviteModal && (
+        <Modal
+          show={inviteModal}
+          onHide={handleCloseInviteModal}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter">
+              Send Invite
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h4>Centered Modal</h4>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "15px",
+                width: "100%",
+                alignItems: "center",
+              }}
+            >
+              <input
+                placeholder="email of user or agent to be invited"
+                value={data.invitee}
+                type="email"
+                onChange={onChange}
+                name="invitee"
+                className="managementInputs"
+              />
+              <input
+                placeholder="Name"
+                value={data.name}
+                onChange={onChange}
+                name="name"
+                className="managementInputs"
+              />
+              <select
+                name="type"
+                value={data.type}
+                onChange={onChange}
+                className="managementInputs"
+              >
+                <option value="">Select inivte type</option>
+                <option value="invite_user">User</option>
+                <option value="agent">Agent</option>
+              </select>
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={sendInvite}>Send Invite</Button>
+            <Button onClick={handleCloseInviteModal} variant="danger">
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
       {deleteDialogue && (
         <dialog id="modalLogout" className="modalLogout" open>
           <div className="modalLogoutMain">

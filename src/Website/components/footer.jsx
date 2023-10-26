@@ -11,13 +11,11 @@ import { ROUTES } from "../../../utils/routes";
 export const Footer = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("role")
-    localStorage.removeItem("password")
-    localStorage.removeItem("senderExtension")
-    localStorage.removeItem("id")
-
-
-
+    localStorage.removeItem("role");
+    localStorage.removeItem("password");
+    localStorage.removeItem("senderExtension");
+    localStorage.removeItem("id");
+    localStorage.removeItem("fid");
   };
   return (
     <footer className="footer2">
