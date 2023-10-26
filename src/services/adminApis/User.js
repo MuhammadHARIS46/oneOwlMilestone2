@@ -9,5 +9,9 @@ export const UserApi = () => {
     return axiosInstance.get(`${baseUrl}/user`);
   };
 
-  return { getAllUsers };
+  const sendCompanyInvite = (data) =>{
+    return axiosInstance.post(`${baseUrl}/invite`,data);
+  }
+
+  return { getAllUsers,sendCompanyInvite };
 };

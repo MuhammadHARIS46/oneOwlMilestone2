@@ -70,6 +70,7 @@ export const Sidebar = () => {
     localStorage.removeItem("password");
     localStorage.removeItem("senderExtension");
     localStorage.removeItem("id");
+    localStorage.removeItem("fid");
     navigate(ROUTES.LOGIN);
   };
   const role = localStorage.getItem("role");

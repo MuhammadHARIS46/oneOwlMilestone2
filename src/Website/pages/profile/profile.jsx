@@ -38,9 +38,6 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
     return emailRegex.test(email);
   };
 
-  // const getSocialVal = (e) => {
-  //   setAddSocialVal({ ...addSocialVal, [e.target.name]: e.target.value });
-  // };
   const [userNum, setUserNum] = useState("");
 
   const [userData, setUserData] = useState({
@@ -97,55 +94,115 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
     phones: [],
     socialLinks: [],
   });
-  const [editingIndex, setEditingIndex] = useState(-1); // Initialize with -1 (no email is being edited)
+  
+  const [editingIndexEmails, setEditingIndexEmails] = useState(-1);
+  const [editingIndexPhones, setEditingIndexPhones] = useState(-1);
+  const [editingIndexSocialLinks, setEditingIndexSocialLinks] = useState(-1);
+  
   const [showAddEmail, setShowAddEmail] = useState(false);
   const [showAddPhone, setShowAddPhone] = useState(false);
   const [showAddSocial, setShowAddSocial] = useState(false);
-  const addField = (fieldType) => {
+  
+  const addEmail = () => {
     setContactInfo({
       ...contactInfo,
-      [fieldType]: [...contactInfo[fieldType], ""],
+      emails: [...contactInfo.emails, ""],
     });
-    if (fieldType === "emails") {
-      setShowAddEmail(true);
-    } else if (fieldType === "phones") {
-      setShowAddPhone(true);
-    } else if (fieldType === "socialLinks") {
-      setShowAddSocial(true);
-    }
-
-    setEditingIndex(contactInfo[fieldType].length); // Start editing the newly added email
+    setShowAddEmail(true);
+    setEditingIndexEmails(contactInfo.emails.length);
   };
-
-  const removeField = (fieldType, index) => {
-    const updatedFields = [...contactInfo[fieldType]];
+  
+  const addPhone = () => {
+    setContactInfo({
+      ...contactInfo,
+      phones: [...contactInfo.phones, ""],
+    });
+    setShowAddPhone(true);
+    setEditingIndexPhones(contactInfo.phones.length);
+  };
+  
+  const addSocialLink = () => {
+    setContactInfo({
+      ...contactInfo,
+      socialLinks: [...contactInfo.socialLinks, ""],
+    });
+    setShowAddSocial(true);
+    setEditingIndexSocialLinks(contactInfo.socialLinks.length);
+  };
+  
+  const removeEmail = (index) => {
+    const updatedFields = [...contactInfo.emails];
     updatedFields.splice(index, 1);
     setContactInfo({
       ...contactInfo,
-      [fieldType]: updatedFields,
+      emails: updatedFields,
     });
-    setEditingIndex(-1); // Stop editing when an email is removed
+    setEditingIndexEmails(-1);
   };
-
-  const updateFieldValue = (fieldType, index, value) => {
-    const updatedFields = [...contactInfo[fieldType]];
+  
+  const removePhone = (index) => {
+    const updatedFields = [...contactInfo.phones];
+    updatedFields.splice(index, 1);
+    setContactInfo({
+      ...contactInfo,
+      phones: updatedFields,
+    });
+    setEditingIndexPhones(-1);
+  };
+  
+  const removeSocialLink = (index) => {
+    const updatedFields = [...contactInfo.socialLinks];
+    updatedFields.splice(index, 1);
+    setContactInfo({
+      ...contactInfo,
+      socialLinks: updatedFields,
+    });
+    setEditingIndexSocialLinks(-1);
+  };
+  
+  const updateEmailValue = (index, value) => {
+    const updatedFields = [...contactInfo.emails];
     updatedFields[index] = value;
     setContactInfo({
       ...contactInfo,
-      [fieldType]: updatedFields,
+      emails: updatedFields,
     });
   };
-
-  const finishEditing = (fieldType, index) => {
-    if (fieldType === "emails") {
-      setShowAddEmail(true);
-    } else if (fieldType === "phones") {
-      setShowAddPhone(true);
-    } else if (fieldType === "socialLinks") {
-      setShowAddSocial(true);
-    }
-    setEditingIndex(-1); // Stop editing and show email as plain text
+  
+  const updatePhoneValue = (index, value) => {
+    const updatedFields = [...contactInfo.phones];
+    updatedFields[index] = value;
+    setContactInfo({
+      ...contactInfo,
+      phones: updatedFields,
+    });
   };
+  
+  const updateSocialLinkValue = (index, value) => {
+    const updatedFields = [...contactInfo.socialLinks];
+    updatedFields[index] = value;
+    setContactInfo({
+      ...contactInfo,
+      socialLinks: updatedFields,
+    });
+  };
+  
+  const finishEditingEmail = () => {
+    setShowAddEmail(false);
+    setEditingIndexEmails(-1);
+  };
+  
+  const finishEditingPhone = () => {
+    setShowAddPhone(false);
+    setEditingIndexPhones(-1);
+  };
+  
+  const finishEditingSocialLink = () => {
+    setShowAddSocial(false);
+    setEditingIndexSocialLinks(-1);
+  };
+  
+  
 
   return (
     <React.Fragment>
@@ -390,23 +447,28 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                 <p className="fieldVal">xyz@gmail.com</p>
                 {contactInfo.emails.map((email, index) => (
                   <div key={index}>
-                    <p className="fieldVal">
-                      {editingIndex === index ? (
+                    <div className="fieldVal">
+                      {editingIndexEmails === index ? (
                         <div className="AddInput">
                           <input
                             type="email"
                             value={email}
                             onChange={(e) =>
-                              updateFieldValue("emails", index, e.target.value)
+                              updateEmailValue(index, e.target.value)
                             }
+                            onKeyPress={(e) => {
+                              if (e.key === "Enter") {
+                                finishEditingEmail();
+                              }
+                            }}
                             style={{
                               border: "1px solid grey",
                               outline: "none",
                             }}
                           />
-                          {editingIndex === index ? (
+                          {editingIndexEmails === index ? (
                             <button
-                              onClick={() => finishEditing("emails", index)}
+                              onClick={() =>finishEditingEmail() }
                               style={{
                                 border: "1px solid grey",
                                 backgroundColor: "transparent",
@@ -420,9 +482,6 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                               <RiAddLine />
                             </button>
                           ) : (
-                            // <button onClick={() => setEditingIndex(index)}>
-                            //   <RiAddLine /> Edit
-                            // </button>
                             ""
                           )}
                         </div>
@@ -430,16 +489,16 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                         <span>{email}</span>
                       )}
 
-                      <button onClick={() => removeField("emails", index)}>
+                      <button onClick={() => removeEmail(index)}>
                         Remove
                       </button>
-                    </p>
+                    </div>
                   </div>
                 ))}
                 {showAddEmail === false && (
                   <button
                     className="addfieldButton"
-                    onClick={() => addField("emails")}
+                    onClick={() => addEmail()}
                   >
                     <AiFillPlusCircle />
                     Add Email
@@ -453,23 +512,28 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                 <p className="fieldVal">0310-909090</p>
                 {contactInfo.phones.map((phone, index) => (
                   <div key={index}>
-                    <p className="fieldVal">
-                      {editingIndex === index ? (
+                    <div className="fieldVal">
+                      {editingIndexPhones === index ? (
                         <div className="AddInput">
                           <input
                             type="email"
                             value={phone}
                             onChange={(e) =>
-                              updateFieldValue("phones", index, e.target.value)
+                              updatePhoneValue(index, e.target.value)
                             }
+                            onKeyPress={(e) => {
+                              if (e.key === "Enter") {
+                                finishEditingPhone();
+                              }
+                            }}
                             style={{
                               border: "1px solid grey",
                               outline: "none",
                             }}
                           />
-                          {editingIndex === index ? (
+                          {editingIndexPhones === index ? (
                             <button
-                              onClick={() => finishEditing("phones", index)}
+                              onClick={() => finishEditingPhone()}
                               style={{
                                 border: "1px solid grey",
                                 backgroundColor: "transparent",
@@ -483,9 +547,6 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                               <RiAddLine />
                             </button>
                           ) : (
-                            // <button onClick={() => setEditingIndex(index)}>
-                            //   <RiAddLine /> Edit
-                            // </button>
                             ""
                           )}
                         </div>
@@ -493,19 +554,21 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                         <span>{phone}</span>
                       )}
 
-                      <button onClick={() => removeField("phones", index)}>
+                      <button onClick={() => removePhone(index)}>
                         Remove
                       </button>
-                    </p>
+                    </div>
                   </div>
                 ))}
-                <button
-                  className="addfieldButton"
-                  onClick={() => addField("phones")}
-                >
-                  <AiFillPlusCircle />
-                  Add Phone Number
-                </button>
+                {showAddPhone === false && (
+                  <button
+                    className="addfieldButton"
+                    onClick={() => addPhone()}
+                  >
+                    <AiFillPlusCircle />
+                    Add Phone Number
+                  </button>
+                )}
               </div>
 
               {/* Social link fields */}
@@ -539,27 +602,31 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                 </a>
                 {contactInfo.socialLinks.map((socialLink, index) => (
                   <div key={index}>
-                    <p className="fieldVal">
-                      {editingIndex === index ? (
+                    <div className="fieldVal">
+                      {editingIndexSocialLinks === index ? (
                         <div className="AddInput">
                           <input
                             value={socialLink}
                             onChange={(e) =>
-                              updateFieldValue(
-                                "socialLinks",
+                              updateSocialLinkValue(
                                 index,
                                 e.target.value
                               )
                             }
+                            onKeyPress={(e) => {
+                              if (e.key === "Enter") {
+                                finishEditingSocialLink();
+                              }
+                            }}
                             style={{
                               border: "1px solid grey",
                               outline: "none",
                             }}
                           />
-                          {editingIndex === index ? (
+                          {editingIndexSocialLinks === index ? (
                             <button
                               onClick={() =>
-                                finishEditing("socialLinks", index)
+                                finishEditingSocialLink()
                               }
                               style={{
                                 border: "1px solid grey",
@@ -574,9 +641,6 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                               <RiAddLine />
                             </button>
                           ) : (
-                            // <button onClick={() => setEditingIndex(index)}>
-                            //   <RiAddLine /> Edit
-                            // </button>
                             ""
                           )}
                         </div>
@@ -587,19 +651,21 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                         </>
                       )}
 
-                      <button onClick={() => removeField("socialLinks", index)}>
+                      <button onClick={() => removeSocialLink(index)}>
                         Remove
                       </button>
-                    </p>
+                    </div>
                   </div>
                 ))}
-                <button
-                  className="addfieldButton"
-                  onClick={() => addField("socialLinks")}
-                >
-                  <AiFillPlusCircle />
-                  Add Social Link
-                </button>
+                {showAddSocial === false && (
+                  <button
+                    className="addfieldButton"
+                    onClick={() => addSocialLink()}
+                  >
+                    <AiFillPlusCircle />
+                    Add Social Link
+                  </button>
+                )}
               </div>
             </div>
           </div>
