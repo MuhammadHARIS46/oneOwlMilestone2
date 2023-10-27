@@ -24,8 +24,8 @@ const Login = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      localStorage.setItem("role", response.data.role);
-      localStorage.setItem("senderExtension", response.data.extension);
+      localStorage.setItem("role", response.data.data.role);
+      localStorage.setItem("senderExtension", response.data.data.extension);
       if (response.data.role === "agent") {
         navigate(ROUTES.DASHBOARD_AGENT);
         enqueueSnackbar("Logged in successfully", {
